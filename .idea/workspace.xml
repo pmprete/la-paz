@@ -1,7 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91c44965-610e-47a3-9408-583149e4cc50" name="Default" comment="" />
+    <list default="true" id="91c44965-610e-47a3-9408-583149e4cc50" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/libraries/Layout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/busqueda.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/busqueda.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/layout_main.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/movimientos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/movimientos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/reporte.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/reporte.php" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\controllers\welcome.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\fonts\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\img\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\js\.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\css\bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\css\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\css\landing-page.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\css\signin.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\css\font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\css\font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\fonts\FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\fonts\fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\fonts\fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\fonts\fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\fonts\fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\bordered-pulled.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\core.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\fixed-width.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\font-awesome.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\icons.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\larger.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\list.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\path.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\rotated-flipped.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\spinning.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\stacked.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\less\variables.less" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_bordered-pulled.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_core.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_fixed-width.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_larger.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_path.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_rotated-flipped.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_spinning.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_stacked.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\font-awesome\scss\font-awesome.scss" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\fonts\glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\fonts\glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\fonts\glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\img\intro-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\img\landing-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\js\bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\js\bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\js\jquery-1.10.2.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\views\welcome_messageOld.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\css\.htaccess" afterPath="$PROJECT_DIR$/assets/.htaccess" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\css\bootstrap.css" afterPath="$PROJECT_DIR$/assets/css/bootstrap.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\css\bootstrap.min.css" afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\css\landing-page.css" afterPath="$PROJECT_DIR$/assets/css/landing-page.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\css\signin.css" afterPath="$PROJECT_DIR$/assets/css/signin.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\css\font-awesome.css" afterPath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\css\font-awesome.min.css" afterPath="$PROJECT_DIR$/assets/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\fonts\FontAwesome.otf" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\fonts\fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\fonts\fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\fonts\fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\fonts\fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/assets/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\bordered-pulled.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\core.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\fixed-width.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\font-awesome.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\icons.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\larger.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\list.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\mixins.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\path.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\rotated-flipped.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\spinning.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/spinning.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\stacked.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\less\variables.less" afterPath="$PROJECT_DIR$/assets/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_bordered-pulled.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_core.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_fixed-width.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_icons.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_larger.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_list.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_mixins.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_path.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_rotated-flipped.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_spinning.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_spinning.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_stacked.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\_variables.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\font-awesome\scss\font-awesome.scss" afterPath="$PROJECT_DIR$/assets/font-awesome/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\fonts\glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\fonts\glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\fonts\glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\fonts\glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/assets/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\img\intro-bg.jpg" afterPath="$PROJECT_DIR$/assets/img/intro-bg.jpg" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\img\landing-bg.jpg" afterPath="$PROJECT_DIR$/assets/img/landing-bg.jpg" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\js\bootstrap.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap.js" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\js\bootstrap.min.js" afterPath="$PROJECT_DIR$/assets/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\js\jquery-1.10.2.js" afterPath="$PROJECT_DIR$/assets/js/jquery-1.10.2.js" />
+      <change type="MOVED" beforePath="C:\xampp\htdocs\la-paz\application\views\welcome_message.php" afterPath="$PROJECT_DIR$/application/views/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/autoload.php" afterPath="$PROJECT_DIR$/application/config/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="la-paz.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,19 +139,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index.html">
+      <file leaf-file-name="layout_main.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/layout_main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="114" selection-end="114" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+            <state line="26" column="42" selection-start="1297" selection-end="1297" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/welcome.php">
+      <file leaf-file-name="reporte.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/reporte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="7" selection-start="612" selection-end="612" vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="816">
+            <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movimientos.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/movimientos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="5" selection-start="235" selection-end="235" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="289">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="6" selection-start="230" selection-end="230" vertical-scroll-proportion="0.39534885" vertical-offset="0" max-vertical-offset="559">
               <folding />
             </state>
           </provider>
@@ -56,12 +190,34 @@
       <MyDateState />
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/application/controllers/layout.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Movimientos.php" />
+        <option value="$PROJECT_DIR$/application/controllers/movimiento.php" />
+        <option value="$PROJECT_DIR$/application/views/layout.php" />
+        <option value="$PROJECT_DIR$/application/controllers/busqueda.php" />
+        <option value="$PROJECT_DIR$/application/views/busqueda.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Layout.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/application/views/login.php" />
+        <option value="$PROJECT_DIR$/application/controllers/reporte.php" />
+        <option value="$PROJECT_DIR$/application/views/layout_main.php" />
+        <option value="$PROJECT_DIR$/application/views/movimientos.php" />
+        <option value="$PROJECT_DIR$/application/views/reporte.php" />
+        <option value="$PROJECT_DIR$/application/controllers/movimientos.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="XAMPP PHP 5.5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="140" />
-    <option name="y" value="5" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -70,7 +226,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -89,6 +245,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -117,7 +274,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -141,17 +330,82 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager">
-    <list size="0" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\la-paz\assets" />
+      <recent name="C:\xampp\htdocs\la-paz\application\content" />
+      <recent name="C:\xampp\htdocs\la-paz\application\views" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.welcome_message.php">
+    <configuration default="false" name="la-paz" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="application" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/application" />
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="welcome_message.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/application/views/welcome_message.php">
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.la-paz" />
+      <item index="1" class="java.lang.String" itemvalue="PHPUnit.application" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.welcome_message.php" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.welcome_message.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.application" />
+        <item index="2" class="java.lang.String" itemvalue="PHPUnit.la-paz" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="91c44965-610e-47a3-9408-583149e4cc50" name="Default" comment="" />
@@ -160,29 +414,71 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="5" width="1400" height="1000" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -196,16 +492,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/index.html">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="114" selection-end="114" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/welcome.php">
+    <entry file="file://$PROJECT_DIR$/application/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="612" selection-end="612" vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="816">
+        <state line="5" column="0" selection-start="59" selection-end="59" vertical-scroll-proportion="0.15947467" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="40" selection-start="1948" selection-end="1948" vertical-scroll-proportion="2.0675423" vertical-offset="20" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="49" selection-start="854" selection-end="854" vertical-scroll-proportion="0.9249531" vertical-offset="0" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="559">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="8" selection-start="5794" selection-end="5794" vertical-scroll-proportion="0.50769234" vertical-offset="2847" max-vertical-offset="3570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/reporte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="36" selection-start="208" selection-end="208" vertical-scroll-proportion="0.22326455" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/busqueda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="697" selection-end="697" vertical-scroll-proportion="0.63414633" vertical-offset="2" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/busqueda.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="293" selection-end="293" vertical-scroll-proportion="0.35084426" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="15" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/movimientos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="22" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="42" selection-start="1297" selection-end="1297" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/reporte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/movimientos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="5" selection-start="235" selection-end="235" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="6" selection-start="230" selection-end="230" vertical-scroll-proportion="0.39534885" vertical-offset="0" max-vertical-offset="559">
           <folding />
         </state>
       </provider>

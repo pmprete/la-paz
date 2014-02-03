@@ -10,15 +10,15 @@
     <title>Sistema de Cobranza - Municipalidad de La Paz</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="application/css/bootstrap.css" rel="stylesheet">
+    <link href="../la-paz/application/content/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom Google Web Font -->
-    <link href="application/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href='application/http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href="../la-paz/application/content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Add custom CSS here -->
-    <link href="application/css/landing-page.css" rel="stylesheet">
-    <link href="application/css/signin.css" rel="stylesheet">
+    <link href="../la-paz/application/content/css/landing-page.css" rel="stylesheet">
+    <link href="../la-paz/application/content/css/signin.css" rel="stylesheet">
 
 </head>
 
@@ -34,8 +34,11 @@
                         <h2>Sistema de Cobranza de la Municipalidad de La Paz</h2>
                         
                         <hr class="intro-divider"/>
-                        
-                                <form class="form-signin" role="form">
+
+                            <?php
+                                $attributes = array('class' => 'form-signin', 'role' => 'form');
+                                echo form_open('login/ingresar', $attributes);
+                            ?>
                                     <h3 class="form-signin-heading">Ingreso</h3>
                                     <input type="username" class="form-control" placeholder="Usuario" required="" autofocus="">
                                     <input type="password" class="form-control" placeholder="Contraseña" required="">
@@ -53,8 +56,8 @@
         <!-- /.container-fluid -->
 
     <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="../la-paz/application/content/js/jquery-1.10.2.js"></script>
+    <script src="../la-paz/application/content/js/bootstrap.js"></script>
 
 </body>
 
