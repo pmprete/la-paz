@@ -42,14 +42,14 @@ class Login extends CI_Controller {
         // getting the post values of the form:
         $username = $this->input->post("username");
         $password = $this->input->post("password");
-		
-		$user = new Entity\User;
+		/*
+		$user = new Entity/User;
 		$user->setUsername('Joseph');
 		$user->setPassword('secretPassw0rd');
 
 		$this->em->persist($user);
 		$this->em->flush();
-
+        */
         redirect('/busqueda/index');
     }
 }

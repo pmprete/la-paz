@@ -44,5 +44,12 @@ interface Selectable
      * @return Collection
      */
     function matching(Criteria $criteria);
+
+    /**
+     * Return the expression builder.
+     *
+     * @return \Doctrine\Common\Collections\ExpressionBuilder
+     */
+    function expr();
 }
 

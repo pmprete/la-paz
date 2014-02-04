@@ -52,24 +52,6 @@ final class DocLexer extends Lexer
     const T_NULL                = 111;
     const T_COLON               = 112;
 
-    protected $noCase = array(
-        '@'  => self::T_AT,
-        ','  => self::T_COMMA,
-        '('  => self::T_OPEN_PARENTHESIS,
-        ')'  => self::T_CLOSE_PARENTHESIS,
-        '{'  => self::T_OPEN_CURLY_BRACES,
-        '}'  => self::T_CLOSE_CURLY_BRACES,
-        '='  => self::T_EQUALS,
-        ':'  => self::T_COLON,
-        '\\' => self::T_NAMESPACE_SEPARATOR
-    );
-
-    protected $withCase = array(
-        'true'  => self::T_TRUE,
-        'false' => self::T_FALSE,
-        'null'  => self::T_NULL
-    );
-
     /**
      * {@inheritdoc}
      */
@@ -101,30 +83,61 @@ final class DocLexer extends Lexer
     {
         $type = self::T_NONE;
 
-        if ($value[0] === '"') {
-            $value = str_replace('""', '"', substr($value, 1, strlen($value) - 2));
-
-            return self::T_STRING;
-        }
-
-        if (isset($this->noCase[$value])) {
-            return $this->noCase[$value];
-        }
-
-        if ($value[0] === '_' || $value[0] === '\\' || ctype_alpha($value[0])) {
-            return self::T_IDENTIFIER;
-        }
-
-        $lowerValue = strtolower($value);
-
-        if (isset($this->withCase[$lowerValue])) {
-            return $this->withCase[$lowerValue];
-        }
-
         // Checking numeric value
         if (is_numeric($value)) {
             return (strpos($value, '.') !== false || stripos($value, 'e') !== false)
                 ? self::T_FLOAT : self::T_INTEGER;
+        }
+
+        if ($value[0] === '"') {
+            $value = str_replace('""', '"', substr($value, 1, strlen($value) - 2));
+
+            return self::T_STRING;
+        } else {
+            switch (strtolower($value)) {
+                case '@':
+                    return self::T_AT;
+
+                case ',':
+                    return self::T_COMMA;
+
+                case '(':
+                    return self::T_OPEN_PARENTHESIS;
+
+                case ')':
+                    return self::T_CLOSE_PARENTHESIS;
+
+                case '{':
+                    return self::T_OPEN_CURLY_BRACES;
+
+                case '}':
+                    return self::T_CLOSE_CURLY_BRACES;
+
+                case '=':
+                    return self::T_EQUALS;
+
+                case '\\':
+                    return self::T_NAMESPACE_SEPARATOR;
+
+                case 'true':
+                    return self::T_TRUE;
+
+                case 'false':
+                    return self::T_FALSE;
+
+                case 'null':
+                    return self::T_NULL;
+
+                case ':':
+                    return self::T_COLON;
+
+                default:
+                    if (ctype_alpha($value[0]) || $value[0] === '_' || $value[0] === '\\') {
+                        return self::T_IDENTIFIER;
+                    }
+
+                    break;
+            }
         }
 
         return $type;
