@@ -39,10 +39,10 @@
                                 echo form_open('login/ingresar', $attributes);
                             ?>
                                     <h3 class="form-signin-heading">Ingreso</h3>
-                                    <input id="username" type="username" class="form-control" placeholder="Usuario" required="" autofocus="">
-                                    <input id="password" type="password" class="form-control" placeholder="Contraseña" required="">
+                                    <input id="username" name="username" type="username" class="form-control" placeholder="Usuario" required="" autofocus="">
+                                    <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required="">
                                     <label class="checkbox recordar-datos">
-                                    <input id="remember-me" type="checkbox" value="remember-me"> Recordar mis datos
+                                    <input id="remember-me" name="remember-me" type="checkbox" value="remember-me"> Recordar mis datos
                                     </label>
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
                             <?php echo form_close();?>

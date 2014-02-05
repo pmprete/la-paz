@@ -29,13 +29,6 @@ class Login extends MY_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        print_r($this->input->post());
-
-        echo $username;
-        echo "<br>";
-        echo $password;
-        echo "<br>";
-
         $user = $this->enity_manager->getRepository('Entity\User')->findOneBy(array('username' => $username));
 
         if(is_null($user)){
@@ -43,7 +36,7 @@ class Login extends MY_Controller {
             return;
         }
 
-        if($user->password != $password){
+        if($user->getPassword() != $password){
             echo "Error! contraseña incorrecta";
             return;
         }
