@@ -186,22 +186,22 @@ class ManyToManyPersister extends AbstractCollectionPersister
      */
     protected function _getDeleteSQLParameters(PersistentCollection $coll)
     {
-        $mapping    = $coll->getMapping();
         $identifier = $this->_uow->getEntityIdentifier($coll->getOwner());
+        $mapping    = $coll->getMapping();
+        $params     = array();
 
         // Optimization for single column identifier
         if (count($mapping['relationToSourceKeyColumns']) === 1) {
-            return array(reset($identifier));
+            $params[] = array_pop($identifier);
+
+            return $params;
         }
 
         // Composite identifier
         $sourceClass = $this->_em->getClassMetadata(get_class($coll->getOwner()));
-        $params      = array();
 
-        foreach ($mapping['relationToSourceKeyColumns'] as $columnName => $refColumnName) {
-            $params[] = isset($sourceClass->fieldNames[$refColumnName])
-                ? $identifier[$sourceClass->fieldNames[$refColumnName]]
-                : $identifier[$sourceClass->getFieldForColumn($columnName)];
+        foreach ($mapping['relationToSourceKeyColumns'] as $srcColumn) {
+            $params[] = $identifier[$sourceClass->fieldNames[$srcColumn]];
         }
 
         return $params;

@@ -178,13 +178,10 @@ class SimpleObjectHydrator extends AbstractHydrator
                 // One solution is to load the association, but it might require extra efforts.
                 return array('name' => $column);
 
-            case (isset($this->_rsm->metaMappings[$column])):
+            default:
                 return array(
                     'name' => $this->_rsm->metaMappings[$column]
                 );
-
-            default:
-                return null;
         }
     }
 }

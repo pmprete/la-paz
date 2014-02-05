@@ -217,8 +217,7 @@ class DatabaseDriver implements MappingDriver
         }
 
         if ($ids) {
-            // We need to check for the columns here, because we might have associations as id as well.
-            if (count($primaryKeyColumns) == 1) {
+            if (count($ids) == 1) {
                 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_AUTO);
             }
 

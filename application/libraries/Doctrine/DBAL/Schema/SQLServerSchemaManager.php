@@ -47,8 +47,6 @@ class SQLServerSchemaManager extends AbstractSchemaManager
             $autoincrement = true;
         }
 
-        $dbType = strtok($dbType, '(), ');
-
         $type = array();
         $unsigned = $fixed = null;
 

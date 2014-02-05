@@ -26,7 +26,6 @@ use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 
 use Doctrine\ORM\Query\QueryException;
-use Doctrine\ORM\Mapping;
 
 /**
  * Base contract for ORM queries. Base class for Query and NativeQuery.
@@ -259,9 +258,6 @@ abstract class AbstractQuery
 
             case is_object($value) && $this->_em->getMetadataFactory()->hasMetadataFor(ClassUtils::getClass($value)):
                 return $this->convertObjectParameterToScalarValue($value);
-
-            case ($value instanceof Mapping\ClassMetadata):
-                return $value->name;
 
             default:
                 return $value;

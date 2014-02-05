@@ -750,10 +750,7 @@ class SqlWalker implements TreeWalker
         $sqlParts = array();
 
         foreach ($identificationVarDecls as $identificationVariableDecl) {
-            $sql = $this->platform->appendLockHint(
-                $this->walkRangeVariableDeclaration($identificationVariableDecl->rangeVariableDeclaration),
-                $this->query->getHint(Query::HINT_LOCK_MODE)
-            );
+            $sql = $this->walkRangeVariableDeclaration($identificationVariableDecl->rangeVariableDeclaration);
 
             foreach ($identificationVariableDecl->joins as $join) {
                 $sql .= $this->walkJoin($join);
@@ -773,7 +770,7 @@ class SqlWalker implements TreeWalker
                 }
             }
 
-            $sqlParts[] = $sql;
+            $sqlParts[] = $this->platform->appendLockHint($sql, $this->query->getHint(Query::HINT_LOCK_MODE));
         }
 
         return ' FROM ' . implode(', ', $sqlParts);
@@ -1370,16 +1367,13 @@ class SqlWalker implements TreeWalker
         $sqlParts = array ();
 
         foreach ($identificationVarDecls as $subselectIdVarDecl) {
-            $sql = $this->platform->appendLockHint(
-                $this->walkRangeVariableDeclaration($subselectIdVarDecl->rangeVariableDeclaration),
-                $this->query->getHint(Query::HINT_LOCK_MODE)
-            );
+            $sql = $this->walkRangeVariableDeclaration($subselectIdVarDecl->rangeVariableDeclaration);
 
             foreach ($subselectIdVarDecl->joins as $join) {
                 $sql .= $this->walkJoin($join);
             }
 
-            $sqlParts[] = $sql;
+            $sqlParts[] = $this->platform->appendLockHint($sql, $this->query->getHint(Query::HINT_LOCK_MODE));
         }
 
         return ' FROM ' . implode(', ', $sqlParts);
@@ -1916,22 +1910,31 @@ class SqlWalker implements TreeWalker
 
         foreach ($instanceOfExpr->value as $parameter) {
             if ($parameter instanceof AST\InputParameter) {
-                $sqlParameterList[] = $this->walkInputParameter($parameter);
+                // We need to modify the parameter value to be its correspondent mapped value
+                $dqlParamKey = $parameter->name;
+                $dqlParam    = $this->query->getParameter($dqlParamKey);
+                $paramValue  = $this->query->processParameterValue($dqlParam->getValue());
+
+                if ( ! ($paramValue instanceof \Doctrine\ORM\Mapping\ClassMetadata)) {
+                    throw QueryException::invalidParameterType('ClassMetadata', get_class($paramValue));
+                }
+
+                $entityClassName = $paramValue->name;
             } else {
                 // Get name from ClassMetadata to resolve aliases.
                 $entityClassName = $this->em->getClassMetadata($parameter)->name;
+            }
 
-                if ($entityClassName == $class->name) {
-                    $sqlParameterList[] = $this->conn->quote($class->discriminatorValue);
-                } else {
-                    $discrMap = array_flip($class->discriminatorMap);
+            if ($entityClassName == $class->name) {
+                $sqlParameterList[] = $this->conn->quote($class->discriminatorValue);
+            } else {
+                $discrMap = array_flip($class->discriminatorMap);
 
-                    if (!isset($discrMap[$entityClassName])) {
-                        throw QueryException::instanceOfUnrelatedClass($entityClassName, $class->rootEntityName);
-                    }
-
-                    $sqlParameterList[] = $this->conn->quote($discrMap[$entityClassName]);
+                if (!isset($discrMap[$entityClassName])) {
+                    throw QueryException::instanceOfUnrelatedClass($entityClassName, $class->rootEntityName);
                 }
+
+                $sqlParameterList[] = $this->conn->quote($discrMap[$entityClassName]);
             }
         }
 

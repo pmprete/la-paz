@@ -11,7 +11,7 @@ class Login extends CI_Controller {
 
         // Not required if you autoload the library
 		//Lo tengo en autoload deje esto como comentario para que se entienda de donde sale
-        //$this->load->library('doctrine');
+        $this->load->library('doctrine');
 
         $this->em = $this->doctrine->em;
     }
@@ -42,11 +42,11 @@ class Login extends CI_Controller {
         // getting the post values of the form:
         $username = $this->input->post("username");
         $password = $this->input->post("password");
-		/*
-		$user = new Entity/User;
+
+		$user = new Entity\User;
 		$user->setUsername('Joseph');
 		$user->setPassword('secretPassw0rd');
-
+        /*
 		$this->em->persist($user);
 		$this->em->flush();
         */

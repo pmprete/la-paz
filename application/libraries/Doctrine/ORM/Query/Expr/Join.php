@@ -141,7 +141,7 @@ class Join
     {
         return strtoupper($this->joinType) . ' JOIN ' . $this->join
              . ($this->alias ? ' ' . $this->alias : '')
-             . ($this->indexBy ? ' INDEX BY ' . $this->indexBy : '')
-             . ($this->condition ? ' ' . strtoupper($this->conditionType) . ' ' . $this->condition : '');
+             . ($this->condition ? ' ' . strtoupper($this->conditionType) . ' ' . $this->condition : '')
+             . ($this->indexBy ? ' INDEX BY ' . $this->indexBy : '');
     }
 }

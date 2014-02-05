@@ -27,7 +27,6 @@ use PDO,
     Doctrine\ORM\Events,
     Doctrine\Common\Collections\ArrayCollection,
     Doctrine\Common\Collections\Collection,
-    Doctrine\ORM\UnitOfWork,
     Doctrine\ORM\Proxy\Proxy;
 
 /**
@@ -66,8 +65,8 @@ class ObjectHydrator extends AbstractHydrator
 
         $this->_resultCounter = 0;
 
-        if ( ! isset($this->_hints[UnitOfWork::HINT_DEFEREAGERLOAD])) {
-            $this->_hints[UnitOfWork::HINT_DEFEREAGERLOAD] = true;
+        if ( ! isset($this->_hints['deferEagerLoad'])) {
+            $this->_hints['deferEagerLoad'] = true;
         }
 
         foreach ($this->_rsm->aliasMap as $dqlAlias => $className) {
@@ -124,7 +123,7 @@ class ObjectHydrator extends AbstractHydrator
      */
     protected function cleanup()
     {
-        $eagerLoad = (isset($this->_hints[UnitOfWork::HINT_DEFEREAGERLOAD])) && $this->_hints[UnitOfWork::HINT_DEFEREAGERLOAD] == true;
+        $eagerLoad = (isset($this->_hints['deferEagerLoad'])) && $this->_hints['deferEagerLoad'] == true;
 
         parent::cleanup();
 

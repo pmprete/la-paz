@@ -1,7 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91c44965-610e-47a3-9408-583149e4cc50" name="Default" comment="" />
+    <list default="true" id="91c44965-610e-47a3-9408-583149e4cc50" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\libraries\Doctrine\DBAL\SQLParserUtilsException.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\libraries\Doctrine\ORM\Id\BigIntegerIdentityGenerator.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\la-paz\application\models\Entities\Users.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/AbstractAsset.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/AbstractAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Persistence/AbstractManagerRegistry.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Persistence/AbstractManagerRegistry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/AbstractPlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/AbstractPlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/AbstractQuery.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/AbstractQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/AbstractSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/AbstractSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/AbstractSchemaSynchronizer.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/AbstractSchemaSynchronizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Annotations/AnnotationReader.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Annotations/AnnotationReader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/ArrayCollection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/ArrayCollection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/ArrayStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/ArrayStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ArrayType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ArrayType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Expr/Base.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Expr/Base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Persisters/BasicEntityPersister.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Persisters/BasicEntityPersister.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BigIntType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BigIntType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BlobType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BlobType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BooleanType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/BooleanType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/CacheException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/CacheException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/ClassMetadataFactory.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/ClassMetadataFactory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/ClassMetadataInfo.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/ClassMetadataInfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Column.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Column.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/ColumnDiff.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/ColumnDiff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Comparator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Comparator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/Expression/CompositeExpression.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/Expression/CompositeExpression.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Configuration.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Configuration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/DrizzlePDOMySql/Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/DrizzlePDOMySql/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlsrv/Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlsrv/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Portability/Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Portability/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/ConnectionEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/ConnectionEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/ConnectionException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/ConnectionException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Helper/ConnectionHelper.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Helper/ConnectionHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Constraint.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Constraint.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ConversionException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ConversionException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/Pagination/CountOutputWalker.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/Pagination/CountOutputWalker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/CreateSchemaSqlCollector.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/CreateSchemaSqlCollector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/Criteria.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/Criteria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Exception.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/DB2Keywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/DB2Keywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/DB2Platform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/DB2Platform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/DB2SchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/DB2SchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/DBALException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/DBALException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateTimeType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateTimeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateTimeTzType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateTimeTzType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DateType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/DebugStack.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/DebugStack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DecimalType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/DecimalType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Annotations/DocLexer.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Annotations/DocLexer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/DrizzlePDOMySql/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/DrizzlePDOMySql/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOIbm/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOIbm/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOMySql/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOMySql/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOOracle/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOOracle/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOPgSql/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOPgSql/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlite/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlite/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlsrv/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOSqlsrv/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/Driver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/Driver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/DriverManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/DriverManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/DrizzleKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/DrizzleKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/DrizzlePlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/DrizzlePlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/DrizzleSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/DrizzleSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/DropSchemaSqlCollector.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/DropSchemaSqlCollector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/EchoSQLLogger.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/EchoSQLLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/EntityGenerator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/EntityGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Events.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Events.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/Expression/ExpressionBuilder.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/Expression/ExpressionBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Cache/FileCache.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Cache/FileCache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/FloatType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/FloatType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/ForeignKeyConstraint.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/ForeignKeyConstraint.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/Graphviz.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/Graphviz.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/GuidType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/GuidType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Id/IdentityGenerator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Id/IdentityGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/ImportCommand.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/ImportCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Index.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/IntegerType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/IntegerType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Expr/Join.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Expr/Join.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/JsonArrayType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/JsonArrayType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/KeywordList.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/KeywordList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/LastInsertId.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/LastInsertId.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/LockMode.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/LockMode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/LoggerChain.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/LoggerChain.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Persisters/ManyToManyPersister.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Persisters/ManyToManyPersister.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Connections/MasterSlaveConnection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Connections/MasterSlaveConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/MsSQLKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/MsSQLKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Exec/MultiTableUpdateExecutor.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Exec/MultiTableUpdateExecutor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardChoser/MultiTenantShardChoser.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardChoser/MultiTenantShardChoser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/Schema/MultiTenantVisitor.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/Schema/MultiTenantVisitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/MySQLKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/MySQLKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/MySqlPlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/MySqlPlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/MySqlSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/MySqlSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/MysqlSessionInit.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/MysqlSessionInit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliConnection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Connection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Exception.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ObjectType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/ObjectType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/OracleKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/OracleKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/OraclePlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/OraclePlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/OracleSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/OracleSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/OracleSessionInit.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/OracleSessionInit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOConnection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/PDOStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/PersistentCollection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/PersistentCollection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/PoolingShardConnection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/PoolingShardConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/PoolingShardManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/PoolingShardManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/PostgreSQLKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/PostgreSQLKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/QueryBuilder.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/QueryBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/QueryCacheProfile.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/QueryCacheProfile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/QueryException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Query/QueryException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/RemoveNamespacedAssets.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/RemoveNamespacedAssets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/ReservedKeywordsValidator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/ReservedKeywordsValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/ReservedWordsCommand.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/ReservedWordsCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/ResultCacheStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Cache/ResultCacheStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/ResultStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/ResultStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/RunSqlCommand.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Tools/Console/Command/RunSqlCommand.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureFederationsSynchronizer.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureFederationsSynchronizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLAzurePlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLAzurePlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureShardManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/SQLAzure/SQLAzureShardManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Filter/SQLFilter.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/Filter/SQLFilter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/SQLLogger.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Logging/SQLLogger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/SQLParserUtils.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/SQLParserUtils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServer2005Platform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServer2005Platform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServer2008Platform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServer2008Platform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServerPlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SQLServerPlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SQLServerSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SQLServerSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/SQLSessionInit.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/Listeners/SQLSessionInit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvConnection.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/SQLiteKeywords.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/Keywords/SQLiteKeywords.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Schema.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableAddColumnEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableAddColumnEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableChangeColumnEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableChangeColumnEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableRemoveColumnEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableRemoveColumnEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableRenameColumnEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaAlterTableRenameColumnEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaColumnDefinitionEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaColumnDefinitionEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaConfig.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaConfig.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaCreateTableColumnEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaCreateTableColumnEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaCreateTableEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaCreateTableEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaDiff.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaDiff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaDropTableEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaDropTableEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SchemaException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaIndexDefinitionEventArgs.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Event/SchemaIndexDefinitionEventArgs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/SchemaSynchronizer.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/SchemaSynchronizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/SchemaTool.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/SchemaTool.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/Selectable.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Collections/Selectable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Sequence.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Sequence.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardChoser/ShardChoser.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardChoser/ShardChoser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardingException.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Sharding/ShardingException.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/SimpleArrayType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/SimpleArrayType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Internal/Hydration/SimpleObjectHydrator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Internal/Hydration/SimpleObjectHydrator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/SingleDatabaseSynchronizer.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Synchronizer/SingleDatabaseSynchronizer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/SmallIntType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/SmallIntType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/SqlWalker.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Query/SqlWalker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SqlitePlatform.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Platforms/SqlitePlatform.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SqliteSchemaManager.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/SqliteSchemaManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Statement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Statement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Statement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Driver/Statement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Portability/Statement.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Portability/Statement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/StringType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/StringType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Table.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/TableDiff.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/TableDiff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Id/TableGenerator.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Id/TableGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Id/TableGeneratorSchemaVisitor.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Id/TableGeneratorSchemaVisitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/TextType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/TextType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/TimeType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/TimeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/Type.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/Type.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/UnitOfWork.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/UnitOfWork.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/VarDateTimeType.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Types/VarDateTimeType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Version.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/Common/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Version.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Version.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/View.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/Visitor.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/DBAL/Schema/Visitor/Visitor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/XmlDriver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/XmlDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/Export/Driver/XmlExporter.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Tools/Export/Driver/XmlExporter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/YamlDriver.php" afterPath="$PROJECT_DIR$/application/libraries/Doctrine/ORM/Mapping/Driver/YamlDriver.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/doctrine.php" afterPath="$PROJECT_DIR$/application/doctrine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="la-paz.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,28 +221,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <file leaf-file-name="Users.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Entity/Users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="65" selection-start="2613" selection-end="2613" vertical-scroll-proportion="-25.192308" vertical-offset="348" max-vertical-offset="1190">
+            <state line="2" column="17" selection-start="23" selection-end="24" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2295">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <file leaf-file-name="Doctrine.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Doctrine.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="8" selection-start="1361" selection-end="1361" vertical-scroll-proportion="-24.538462" vertical-offset="229" max-vertical-offset="1071">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout_main.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/layout_main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="27" selection-start="3526" selection-end="3526" vertical-scroll-proportion="1.7193426" vertical-offset="0" max-vertical-offset="8296">
+            <state line="47" column="25" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.4906367" vertical-offset="537" max-vertical-offset="1071">
               <folding />
             </state>
           </provider>
@@ -68,9 +257,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/layout.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Movimientos.php" />
-        <option value="$PROJECT_DIR$/application/controllers/movimiento.php" />
         <option value="$PROJECT_DIR$/application/views/layout.php" />
         <option value="$PROJECT_DIR$/application/controllers/busqueda.php" />
         <option value="$PROJECT_DIR$/application/views/busqueda.php" />
@@ -82,8 +268,11 @@
         <option value="$PROJECT_DIR$/application/controllers/movimientos.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/views/login.php" />
-        <option value="$PROJECT_DIR$/application/controllers/login.php" />
         <option value="$PROJECT_DIR$/application/views/layout_main.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Doctrine.php" />
+        <option value="$PROJECT_DIR$/application/models/Entities/Users.php" />
+        <option value="$PROJECT_DIR$/application/controllers/login.php" />
+        <option value="$PROJECT_DIR$/application/doctrine.php" />
       </list>
     </option>
   </component>
@@ -91,8 +280,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -120,6 +309,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,20 +338,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="la-paz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="la-paz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -180,7 +356,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -198,13 +374,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="la-paz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,7 +525,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -318,7 +533,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20238096" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2124431" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -350,9 +565,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -367,23 +582,85 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+    <entry file="file://$PROJECT_DIR$/application/doctrine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="65" selection-start="2613" selection-end="2613" vertical-scroll-proportion="-25.192308" vertical-offset="348" max-vertical-offset="1190">
+        <state line="59" column="1" selection-start="2081" selection-end="2081" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="8" selection-start="1361" selection-end="1361" vertical-scroll-proportion="-24.538462" vertical-offset="229" max-vertical-offset="1071">
+        <state line="41" column="37" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/doctrine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="59" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="65" selection-start="2607" selection-end="2607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="8" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="714">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout_main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="27" selection-start="3526" selection-end="3526" vertical-scroll-proportion="1.7193426" vertical-offset="0" max-vertical-offset="8296">
+        <state line="37" column="7" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="731" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="17" selection-start="11155" selection-end="11155" vertical-scroll-proportion="9.29588" vertical-offset="0" max-vertical-offset="8296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="65" selection-start="2613" selection-end="2613" vertical-scroll-proportion="1.2571977" vertical-offset="348" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/doctrine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.85955054" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="37" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.29962546" vertical-offset="537" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.1142322" vertical-offset="595" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="23" selection-end="24" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Doctrine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="25" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.4906367" vertical-offset="537" max-vertical-offset="1071">
           <folding />
         </state>
       </provider>

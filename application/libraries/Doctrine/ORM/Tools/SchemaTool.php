@@ -385,14 +385,22 @@ class SchemaTool
         }
 
         if (isset($mapping['options'])) {
-            $knownOptions = array('comment', 'unsigned', 'fixed', 'default');
+            if (isset($mapping['options']['comment'])) {
+                $options['comment'] = $mapping['options']['comment'];
 
-            foreach ($knownOptions as $knownOption) {
-                if ( isset($mapping['options'][$knownOption])) {
-                    $options[$knownOption] = $mapping['options'][$knownOption];
+                unset($mapping['options']['comment']);
+            }
 
-                    unset($mapping['options'][$knownOption]);
-                }
+            if (isset($mapping['options']['unsigned'])) {
+                $options['unsigned'] = $mapping['options']['unsigned'];
+
+                unset($mapping['options']['unsigned']);
+            }
+
+            if (isset($mapping['options']['fixed'])) {
+                $options['fixed'] = $mapping['options']['fixed'];
+
+                unset($mapping['options']['fixed']);
             }
 
             $options['customSchemaOptions'] = $mapping['options'];
