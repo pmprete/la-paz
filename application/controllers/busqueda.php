@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Busqueda extends CI_Controller {
+class Busqueda extends MY_Controller {
     /**
      * Index Page for this controller.
      *

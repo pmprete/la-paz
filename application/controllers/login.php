@@ -1,16 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-
-	// Doctrine EntityManager
-    public $em;
-
-    function __construct()
-    {
-        parent::__construct();
-
-        $this->em = $this->doctrine->em;
-    }
+class Login extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -39,12 +29,30 @@ class Login extends CI_Controller {
         $username = $this->input->post("username");
         $password = $this->input->post("password");
 
+        echo $username;
+        echo "<br>";
+        echo $password;
+        echo "<br>";
+
+        $user = $this->enity_manager->getRepository('Entity\User')->findOneBy(array('username' => $username));
+
+        if(is_null($user)){
+            echo "Error! no existe en la base";
+            return;
+        }
+
+        if($user->password != $password){
+            echo "Error! contraseña incorrecta";
+            return;
+        }
+
+        /*
 		$user = new Entity\User;
 		$user->setUsername('Joseph');
 		$user->setPassword('secretPassw0rd');
-        /*
-		$this->em->persist($user);
-		$this->em->flush();
+
+		$this->enity_manager->persist($user);
+		$this->enity_manager->flush();
         */
         redirect('/busqueda/index');
     }
