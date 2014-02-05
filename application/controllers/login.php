@@ -9,10 +9,6 @@ class Login extends CI_Controller {
     {
         parent::__construct();
 
-        // Not required if you autoload the library
-		//Lo tengo en autoload deje esto como comentario para que se entienda de donde sale
-        $this->load->library('doctrine');
-
         $this->em = $this->doctrine->em;
     }
 
