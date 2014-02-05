@@ -45,7 +45,7 @@
                                     <input id="remember-me" type="checkbox" value="remember-me"> Recordar mis datos
                                     </label>
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-                                </form>
+                            <?php echo form_close();?>
                                 
                     </div>
                 </div>

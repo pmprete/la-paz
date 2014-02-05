@@ -26,8 +26,10 @@ class Login extends MY_Controller {
     public function ingresar()
     {
         // getting the post values of the form:
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        print_r($this->input->post());
 
         echo $username;
         echo "<br>";
