@@ -78,12 +78,12 @@ class UserGroup
     /**
      * Add users
      *
-     * @param Entity\User $users
+     * @param Entity\User $user
      * @return Group
      */
-    public function addUser(\Entity\User $users)
+    public function addUser(\Entity\User $user)
     {
-        $this->users[] = $users;
+        $this->users[] = $user;
         return $this;
     }
 
