@@ -75,7 +75,7 @@ class Cliente
     }
 
     /**
-     * Add users
+     * Add cuentas
      *
      * @param Entity\Cuenta $cuenta
      * @return Cliente
@@ -87,11 +87,11 @@ class Cliente
     }
 
     /**
-     * Get users
+     * Get cuentas
      *
      * @return Doctrine\Common\Collections\Collection
      */
-    public function getUsers()
+    public function getCuentas()
     {
         return $this->cuentas;
     }

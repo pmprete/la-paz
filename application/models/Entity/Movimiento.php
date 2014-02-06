@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @Table(name="movimiento")
  * @author  Joseph Wynn <joseph@wildlyinaccurate.com>
  */
-class UserGroup
+class Movimiento
 {
 
     /**
@@ -38,6 +38,22 @@ class UserGroup
     protected $cuenta;
 
     /**
+     *@OneToMany(targetEntity="Archivos", mappedBy="movimiento")
+     */
+    protected $archivos;
+
+    /**
+     * Initialize any collection properties as ArrayCollections
+     *
+     * http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html#initializing-collections
+     *
+     */
+    public function __construct()
+    {
+        $this->movimiento = new ArrayCollection;
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -45,6 +61,28 @@ class UserGroup
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add archivo
+     *
+     * @param Entity\Archivo $archivo
+     * @return Movimiento
+     */
+    public function addArchivo(\Entity\Archivo $archivo)
+    {
+        $this->archivos[] = $archivo;
+        return $this;
+    }
+
+    /**
+     * Get archivos
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getArchivos()
+    {
+        return $this->archivos;
     }
 
 
@@ -64,5 +102,39 @@ class UserGroup
             $cuenta->addCuenta($this);
         }
     }
+
+    /**
+     * @param mixed $fecha
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * @param mixed $importe
+     */
+    public function setImporte($importe)
+    {
+        $this->importe = $importe;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImporte()
+    {
+        return $this->importe;
+    }
+
+
 
 }
