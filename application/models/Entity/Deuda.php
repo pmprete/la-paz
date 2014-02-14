@@ -8,10 +8,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User Group Model
  *
  * @Entity
- * @Table(name="movimiento")
- * @author  Joseph Wynn <joseph@wildlyinaccurate.com>
+ * @Table(name="deuda")
  */
-class Movimiento
+class Deuda
 {
 
     /**
@@ -42,6 +41,13 @@ class Movimiento
      */
     protected $archivos;
 
+
+     /**
+     * @ManyToMany(targetEntity="Tasa", inversedBy="deudas")
+     * @JoinTable(name="tasas_deudas")
+     */
+    protected $tasas;
+
     /**
      * Initialize any collection properties as ArrayCollections
      *
@@ -51,6 +57,7 @@ class Movimiento
     public function __construct()
     {
         $this->movimiento = new ArrayCollection;
+        $this->tasas = new ArrayCollection;
     }
 
     /**
@@ -67,7 +74,7 @@ class Movimiento
      * Add archivo
      *
      * @param Entity\Archivo $archivo
-     * @return Movimiento
+     * @return Tasa
      */
     public function addArchivo(\Entity\Archivo $archivo)
     {
@@ -87,6 +94,33 @@ class Movimiento
 
 
     /**
+     * Assign the tasa to a deuda
+     *
+     * @param	Entity\Tasa	$tasa
+     * @return	void
+     */
+    public function addTasa(Tasa $tasa)
+    {
+        $this->tasas[] = $tasa;
+
+        // The association must be defined in both directions
+        if ( ! $tasa->getDeudas()->contains($this))
+        {
+            $tasa->addDeuda($this);
+        }
+    }
+
+   /** Get deudas
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getTasas()
+    {
+        return $this->tasas;
+    }
+    
+
+    /**
      * Assign the movimiento to a cuenta
      *
      * @param	Entity\Cuenta	$cuenta
@@ -102,6 +136,16 @@ class Movimiento
             $cuenta->addCuenta($this);
         }
     }
+
+   /** Get Cuentas
+     *
+     * @return Entity\cuenta
+     */
+    public function getCuenta()
+    {
+        return $this->cuenta;
+    }
+
 
     /**
      * @param mixed $fecha
