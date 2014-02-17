@@ -30,27 +30,7 @@ class User
 	 */
 	protected $descripcion;
 
-	 /**
-          * @ManyToMany(targetEntity="Deuda", mappedBy="tags")
-          */
-	protected $deudas;
-	
-
-	public function __construct() {
-	        $this->deudas = new ArrayCollection;
-	    }
-
-	/**
-	 * Assign the user to a group
-	 *
-	 * @param	Entity\Deuda	$deuda
-	 * @return	void
-	 */
-	public function setDeuda(Deuda $deuda)
-	{
-		$this->deudas[] = $deuda;
-	}
-
+		
 	/**
 	 * Encrypt the password before we store it
 	 *
@@ -84,14 +64,6 @@ class User
 		return $this->descripcion;
 	}
 
-	/**
-	 * Get group
-	 *
-	 * @return Entity\Deuda
-	 */
-	public function getDeudas()
-	{
-		return $this->deudas;
-	}
+
 
 }

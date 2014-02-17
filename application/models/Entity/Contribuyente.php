@@ -8,9 +8,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User Model
  *
  * @Entity
- * @Table(name="cliente")
+ * @Table(name="contribuyente")
  */
-class Cliente
+class Contribuyente
 {
 
     /**
@@ -51,9 +51,9 @@ class Cliente
     protected $telefono_movil;
 
     /**
-     * @OneToMany(targetEntity="Cuenta", mappedBy="cliente")
+     * @OneToMany(targetEntity="Deuda", mappedBy="contribuyente")
      */
-    protected $cuentas;
+    protected $deudas;
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -63,7 +63,7 @@ class Cliente
      */
     public function __construct()
     {
-        $this->cuentas = new ArrayCollection;
+        $this->deudas = new ArrayCollection;
     }
 
     /**
@@ -75,25 +75,25 @@ class Cliente
     }
 
     /**
-     * Add cuentas
+     * Add deuda
      *
-     * @param Entity\Cuenta $cuenta
-     * @return Cliente
+     * @param Entity\Deuda $deuda
+     * @return Contribuyente
      */
-    public function addCuenta(\Entity\Cuenta $cuenta)
+    public function addDeuda(\Entity\Deuda $deuda)
     {
-        $this->cuentas[] = $cuenta;
+        $this->deudas[] = $deuda;
         return $this;
     }
 
     /**
-     * Get cuentas
+     * Get deudas
      *
      * @return Doctrine\Common\Collections\Collection
      */
-    public function getCuentas()
+    public function getDeudas()
     {
-        return $this->cuentas;
+        return $this->deudas;
     }
 
     /**

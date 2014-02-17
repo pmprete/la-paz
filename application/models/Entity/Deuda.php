@@ -5,7 +5,7 @@ namespace Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * User Group Model
+ * Deuda Model
  *
  * @Entity
  * @Table(name="deuda")
@@ -24,18 +24,55 @@ class Deuda
      * @Column(type="decimal", precision=2, scale=1, nullable=false)
      */
     protected $importe;
+	
+	 /**
+     * @Column(type="decimal", precision=2, scale=1, nullable=false)
+     */
+    protected $multa;
+	
+	 /**
+     * @Column(type="decimal", precision=2, scale=1, nullable=false)
+     */
+    protected $recargo;
+	
+	/**
+     * @Column(type="integer", nullable=false)
+     */
+    protected $atraso;
 
     /**
      * @Column(type="date", nullable=false)
      */
-    protected $fecha;
+    protected $periodo;
+	
+	 /**
+     * @Column(type="date", nullable=false)
+     */
+    protected $fecha_vencimiento;
 
     /**
-     * @ManyToOne(targetEntity="Cuenta")
-     * @JoinColumn(name="cuenta_id", referencedColumnName="id")
+     * @ManyToOne(targetEntity="Contribuyente")
+     * @JoinColumn(name="contribuyente_id", referencedColumnName="id")
      */
-    protected $cuenta;
-
+    protected $contribuyente;
+	
+	/**
+     * @ManyToOne(targetEntity="PlanDePago")
+     * @JoinColumn(name="plan_de_pago_id", referencedColumnName="id")
+     */
+    protected $plan_de_pago;
+	
+	/**
+     * @ManyToOne(targetEntity="PlanDePago")
+     * @JoinColumn(name="restructurada_en_plan_de_pago_id", referencedColumnName="id")
+     */
+    protected $restructurada_en_plan_de_pago;
+	
+	 /**
+     * @OneToOne(targetEntity="Pago", mappedBy="deuda")
+     */
+    protected $pago;
+	
     /**
      *@OneToMany(targetEntity="Archivos", mappedBy="movimiento")
      */
@@ -47,6 +84,12 @@ class Deuda
      * @JoinTable(name="tasas_deudas")
      */
     protected $tasas;
+	
+	/**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -99,7 +142,7 @@ class Deuda
      * @param	Entity\Tasa	$tasa
      * @return	void
      */
-    public function addTasa(Tasa $tasa)
+    public function addTasa(\Entity\Tasa $tasa)
     {
         $this->tasas[] = $tasa;
 
@@ -119,52 +162,119 @@ class Deuda
         return $this->tasas;
     }
     
-
-    /**
-     * Assign the movimiento to a cuenta
+	/**
+     * Assign the deuda to a plan de pago
      *
-     * @param	Entity\Cuenta	$cuenta
+     * @param	Entity\PlanDePago	$plan_de_pago
      * @return	void
      */
-    public function setCuenta(Cuenta $cuenta)
+    public function setPlanDePago(\Entity\PlanDePago $plan_de_pago)
     {
-        $this->cuenta = $cuenta;
+        $this->plan_de_pago = $plan_de_pago;
 
         // The association must be defined in both directions
-        if ( ! $cuenta->getMovimientos()->contains($this))
+        if ( ! $plan_de_pago->getDeudasRestructuradas()->contains($this))
         {
-            $cuenta->addCuenta($this);
+            $plan_de_pago->addDeudaRestructurada($this);
         }
     }
 
-   /** Get Cuentas
+   /** Get RestrucutradaEnPlanDePago
      *
-     * @return Entity\cuenta
+     * @return Entity\PlanDePago
      */
-    public function getCuenta()
+    public function getRestrucutradaEnPlanDePago()
     {
-        return $this->cuenta;
+        return $this->restructurada_en_plan_de_pago;
+    }
+	
+	**
+     * Assign the deuda to a restrcutracion de plan de pago
+     *
+     * @param	Entity\PlanDePago	$plan_de_pago
+     * @return	void
+     */
+    public function setRestrucutradaEnPlanDePago(\Entity\PlanDePago $plan_de_pago)
+    {
+        $this->restructurada_en_plan_de_pago = $plan_de_pago;
+
+        // The association must be defined in both directions
+        if ( ! $plan_de_pago->getDeudasOriginales()->contains($this))
+        {
+            $restructurada_en_plan_de_pago->addDeudaOriginal($this);
+        }
+    }
+
+   /** Get PlanDePago
+     *
+     * @return Entity\PlanDePago
+     */
+    public function getPlanDePago()
+    {
+        return $this->plan_de_pago;
     }
 
 
     /**
-     * @param mixed $fecha
+     * Assign the deuda to a contribuyente
+     *
+     * @param	Entity\Contribuyente	$contribuyente
+     * @return	void
      */
-    public function setFecha($fecha)
+    public function setContribuyente(\Entity\Contribuyente $contribuyente)
     {
-        $this->fecha = $fecha;
+        $this->contribuyente = $contribuyente;
+
+        // The association must be defined in both directions
+        if ( ! $cuenta->getDeudas()->contains($this))
+        {
+            $contribuyente->addDeuda($this);
+        }
+    }
+
+   /** Get Contribuyente
+     *
+     * @return Entity\Contribuyente
+     */
+    public function getContribuyente()
+    {
+        return $this->contribuyente;
+    }
+
+	/**
+     * @param date $fecha
+     */
+    public function setPeriodo($fecha)
+    {
+        $this->periodo = $fecha;
     }
 
     /**
-     * @return mixed
+     * @return date
      */
-    public function getFecha()
+    public function getPeriodo()
     {
-        return $this->fecha;
+        return $this->periodo;
     }
 
     /**
-     * @param mixed $importe
+     * @param date $fecha
+     */
+    public function setFechaVencimiento($fecha)
+    {
+        $this->fecha_vencimiento = $fecha;
+    }
+
+    /**
+     * @return date
+     */
+    public function getFechaVencimiento()
+    {
+        return $this->fecha_vencimiento;
+    }
+
+    /**
+     * @param decimal $importe
      */
     public function setImporte($importe)
     {
@@ -172,13 +282,92 @@ class Deuda
     }
 
     /**
-     * @return mixed
+     * @return decimal
      */
     public function getImporte()
     {
         return $this->importe;
     }
+	
+	/**
+     * @param decimal $multa
+     */
+    public function setMulta($multa)
+    {
+        $this->multa = $multa;
+    }
 
+    /**
+     * @return decimal
+     */
+    public function getMulta()
+    {
+        return $this->multa;
+    }
+	
+	/**
+     * @param decimal $recargo
+     */
+    public function setRecargo($recargo)
+    {
+        $this->recargo = $recargo;
+    }
+
+    /**
+     * @return decimal
+     */
+    public function getRecargo()
+    {
+        return $this->recargo;
+    }
+	
+	/**
+     * @param integer $atraso
+     */
+    public function setAtraso($atraso)
+    {
+        $this->atraso = $atraso;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getAtraso()
+    {
+        return $this->atraso;
+    }
+	
+	/**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+	
+	/**
+     * @param Pago $pago
+     */
+    public function setPago($pago)
+    {
+        $this->pago = $pago;
+    }
+
+    /**
+     * @return Pago
+     */
+    public function getPago()
+    {
+        return $this->pago;
+    }
 
 
 }

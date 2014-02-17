@@ -3,13 +3,12 @@
 namespace Entity;
 
 /**
- * User Model
+ * Archivo Model
  *
  * @Entity
- * @Table(name="user")
- * @author  Joseph Wynn <joseph@wildlyinaccurate.com>
- */
-class User
+ * @Table(name="archivo")
+  */
+class Archivo
 {
 
     /**
@@ -25,10 +24,10 @@ class User
     protected $objeto;
 
     /**
-     * @ManyToOne(targetEntity="Movimiento")
-     * @JoinColumn(name="movimiento_id", referencedColumnName="id")
+     * @ManyToOne(targetEntity="deuda")
+     * @JoinColumn(name="deuda_id", referencedColumnName="id")
      */
-    protected $movimiento;
+    protected $deuda;
 
 
     public function getId()
@@ -37,29 +36,28 @@ class User
     }
 
     /**
-     * Assign the user to a group
      *
-     * @param	Entity\Movimiento	$movimiento
+     * @param	Entity\Deuda	$deuda
      * @return	void
      */
-    public function setMovimiento(\Movimientos $movimiento)
+    public function setDeuda(Entity\Deuda $deuda)
     {
-        $this->movimiento = $movimiento;
+        $this->deuda = $deuda;
 
         // The association must be defined in both directions
-        if ( ! $movimiento->getArchivos()->contains($this))
+        if ( ! $deuda->getArchivos()->contains($this))
         {
-            $movimiento->addArchivo($this);
+            $deuda->addArchivo($this);
         }
     }
     /**
      * Get group
      *
-     * @return Entity\Movimiento
+     * @return Entity\Deuda
      */
-    public function getMovimiento()
+    public function getDeuda()
     {
-        return $this->movimiento;
+        return $this->deuda;
     }
 
     /**
