@@ -5,13 +5,20 @@ namespace Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Plan de Pago Model
+ * Pago Model
  *
  * @Entity
- * @Table(name="plan-de-pago")
+ * @Table(name="plan_de_pago")
  */
 class PlanDePago
 {
+
+    /**
+     * @Id
+     * @Column(type="integer", nullable=false)
+     * @GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 
 	/**
      * @OneToMany(targetEntity="Deuda", mappedBy="restructurada_en_plan_de_pago")
@@ -19,10 +26,14 @@ class PlanDePago
 	private $deudas_originales;
 	
 	/**
-     * @OneToMany(targetEntity="Deuda", mappedBy="plan_de_pagos)
+     * @OneToMany(targetEntity="Deuda", mappedBy="deudas_plan_de_pago")
      */
 	private $deudas_restructuradas;
-	
+
+
+    //---------------------Comienzo de Funciones------------------------------------------
+
+
 	 /**
      * Initialize any collection properties as ArrayCollections
      *
@@ -34,14 +45,24 @@ class PlanDePago
         $this->deudas_originales = new ArrayCollection;
 		$this->deudas_restructuradas = new ArrayCollection;
     }
-	
-	  /**
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+	 /**
      * Assign the deuda to a deuda original
      *
      * @param	Entity\Deuda	$deuda
      * @return	void
      */
-    public function addDeudaOriginal(\Entity\Tasa $deuda)
+    public function addDeudaOriginal(\Entity\Deuda $deuda)
     {
         $this->deudas_originales[] = $deuda;
     }
@@ -61,7 +82,7 @@ class PlanDePago
      * @param	Entity\Deuda	$deuda
      * @return	void
      */
-    public function addDeudaRestrucutrada(\Entity\Tasa $deuda)
+    public function addDeudaRestrucutrada(\Entity\Deuda $deuda)
     {
         $this->deudas_restructuradas[] = $deuda;
     }

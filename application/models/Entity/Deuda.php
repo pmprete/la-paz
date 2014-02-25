@@ -74,10 +74,9 @@ class Deuda
     protected $pago;
 	
     /**
-     *@OneToMany(targetEntity="Archivos", mappedBy="movimiento")
+     *@OneToMany(targetEntity="Archivo", mappedBy="deuda")
      */
     protected $archivos;
-
 
      /**
      * @ManyToMany(targetEntity="Tasa", inversedBy="deudas")
@@ -90,6 +89,9 @@ class Deuda
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
+
+
+    //---------------------Comienzo de Funciones------------------------------------------
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -188,7 +190,7 @@ class Deuda
         return $this->restructurada_en_plan_de_pago;
     }
 	
-	**
+	/**
      * Assign the deuda to a restrcutracion de plan de pago
      *
      * @param	Entity\PlanDePago	$plan_de_pago

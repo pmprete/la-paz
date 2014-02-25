@@ -20,7 +20,7 @@ class Login extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('login/login');
 	}
 
     public function ingresar()
@@ -41,15 +41,9 @@ class Login extends MY_Controller {
             return;
         }
 
-        /*
-		$user = new Entity\User;
-		$user->setUsername('Joseph');
-		$user->setPassword('secretPassw0rd');
+        $this->session->set_userdata('username', $username);
 
-		$this->enity_manager->persist($user);
-		$this->enity_manager->flush();
-        */
-        redirect('/busqueda/index');
+        redirect('/escritorio/index');
     }
 }
 

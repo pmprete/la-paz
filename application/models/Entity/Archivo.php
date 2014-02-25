@@ -24,7 +24,7 @@ class Archivo
     protected $objeto;
 
     /**
-     * @ManyToOne(targetEntity="deuda")
+     * @ManyToOne(targetEntity="Deuda")
      * @JoinColumn(name="deuda_id", referencedColumnName="id")
      */
     protected $deuda;

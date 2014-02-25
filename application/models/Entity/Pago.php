@@ -12,6 +12,12 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Pago
 {
+    /**
+     * @Id
+     * @Column(type="integer", nullable=false)
+     * @GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 
 	/**
 	* @OneToOne(targetEntity="Deuda", inversedBy="pago")
@@ -23,6 +29,16 @@ class Pago
      * @Column(type="date", nullable=false)
      */
     protected $fecha;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 	
 	/**
      * @param date $fecha

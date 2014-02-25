@@ -26,12 +26,17 @@ class Contribuyente
     protected $nombre;
 
     /**
-     * @Column(type="string", length=100, nullable=false)
+     * @Column(type="string", length=13, nullable=false)
+     */
+    protected $cuit;
+
+    /**
+     * @Column(type="string", length=50, nullable=false)
      */
     protected $calle;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $altura;
 
@@ -41,12 +46,12 @@ class Contribuyente
     protected $piso;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $telefono_fijo;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $telefono_movil;
 
@@ -67,7 +72,7 @@ class Contribuyente
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -94,6 +99,22 @@ class Contribuyente
     public function getDeudas()
     {
         return $this->deudas;
+    }
+
+    /**
+     * @param mixed $cuit
+     */
+    public function setCuit($cuit)
+    {
+        $this->cuit = $cuit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCuit()
+    {
+        return $this->cuit;
     }
 
     /**
