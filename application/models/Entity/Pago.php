@@ -31,6 +31,25 @@ class Pago
     protected $fecha;
 
     /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+
+
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)  */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -54,6 +73,22 @@ class Pago
     public function getFecha()
     {
         return $this->fecha;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 }

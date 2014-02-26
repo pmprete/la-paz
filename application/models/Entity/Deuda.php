@@ -21,6 +21,11 @@ class Deuda
     protected $id;
 
     /**
+     * @Column(type="string", length=255, nullable=true)
+     */
+    protected $detalle;
+
+    /**
      * @Column(type="decimal", precision=2, scale=1, nullable=false)
      */
     protected $importe;
@@ -90,6 +95,19 @@ class Deuda
      */
     protected $user;
 
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)
+     */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
 
     //---------------------Comienzo de Funciones------------------------------------------
 
@@ -118,8 +136,8 @@ class Deuda
     /**
      * Add archivo
      *
-     * @param Entity\Archivo $archivo
-     * @return Tasa
+     * @param \Entity\Archivo $archivo
+     * @return Archivo
      */
     public function addArchivo(\Entity\Archivo $archivo)
     {
@@ -141,18 +159,12 @@ class Deuda
     /**
      * Assign the tasa to a deuda
      *
-     * @param	Entity\Tasa	$tasa
+     * @param	\Entity\Tasa	$tasa
      * @return	void
      */
     public function addTasa(\Entity\Tasa $tasa)
     {
         $this->tasas[] = $tasa;
-
-        // The association must be defined in both directions
-        if ( ! $tasa->getDeudas()->contains($this))
-        {
-            $tasa->addDeuda($this);
-        }
     }
 
    /** Get deudas
@@ -167,7 +179,7 @@ class Deuda
 	/**
      * Assign the deuda to a plan de pago
      *
-     * @param	Entity\PlanDePago	$plan_de_pago
+     * @param	\Entity\PlanDePago	$plan_de_pago
      * @return	void
      */
     public function setPlanDePago(\Entity\PlanDePago $plan_de_pago)
@@ -183,7 +195,7 @@ class Deuda
 
    /** Get RestrucutradaEnPlanDePago
      *
-     * @return Entity\PlanDePago
+     * @return \Entity\PlanDePago
      */
     public function getRestrucutradaEnPlanDePago()
     {
@@ -193,7 +205,7 @@ class Deuda
 	/**
      * Assign the deuda to a restrcutracion de plan de pago
      *
-     * @param	Entity\PlanDePago	$plan_de_pago
+     * @param	\Entity\PlanDePago	$plan_de_pago
      * @return	void
      */
     public function setRestrucutradaEnPlanDePago(\Entity\PlanDePago $plan_de_pago)
@@ -203,13 +215,13 @@ class Deuda
         // The association must be defined in both directions
         if ( ! $plan_de_pago->getDeudasOriginales()->contains($this))
         {
-            $restructurada_en_plan_de_pago->addDeudaOriginal($this);
+            $plan_de_pago->addDeudaOriginal($this);
         }
     }
 
    /** Get PlanDePago
      *
-     * @return Entity\PlanDePago
+     * @return \Entity\PlanDePago
      */
     public function getPlanDePago()
     {
@@ -220,7 +232,7 @@ class Deuda
     /**
      * Assign the deuda to a contribuyente
      *
-     * @param	Entity\Contribuyente	$contribuyente
+     * @param	\Entity\Contribuyente	$contribuyente
      * @return	void
      */
     public function setContribuyente(\Entity\Contribuyente $contribuyente)
@@ -228,7 +240,7 @@ class Deuda
         $this->contribuyente = $contribuyente;
 
         // The association must be defined in both directions
-        if ( ! $cuenta->getDeudas()->contains($this))
+        if ( ! $contribuyente->getDeudas()->contains($this))
         {
             $contribuyente->addDeuda($this);
         }
@@ -236,7 +248,7 @@ class Deuda
 
    /** Get Contribuyente
      *
-     * @return Entity\Contribuyente
+     * @return \Entity\Contribuyente
      */
     public function getContribuyente()
     {
@@ -244,7 +256,7 @@ class Deuda
     }
 
 	/**
-     * @param date $fecha
+     * @param \date $fecha
      */
     public function setPeriodo($fecha)
     {
@@ -252,7 +264,7 @@ class Deuda
     }
 
     /**
-     * @return date
+     * @return \date
      */
     public function getPeriodo()
     {
@@ -260,7 +272,7 @@ class Deuda
     }
 
     /**
-     * @param date $fecha
+     * @param \date $fecha
      */
     public function setFechaVencimiento($fecha)
     {
@@ -268,7 +280,7 @@ class Deuda
     }
 
     /**
-     * @return date
+     * @return \date
      */
     public function getFechaVencimiento()
     {
@@ -370,6 +382,22 @@ class Deuda
     {
         return $this->pago;
     }
+    /**
+     * @param string $detalle
+     */
+    public function setdetalle($detalle)
+    {
+        $this->detalle = $detalle;
+    }
+
+    /**
+     * @return date
+     */
+    public function getDetalle()
+    {
+        return $this->detalle;
+    }
+
 
 
 }

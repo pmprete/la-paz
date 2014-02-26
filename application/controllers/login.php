@@ -42,6 +42,7 @@ class Login extends MY_Controller {
         }
 
         $this->session->set_userdata('username', $username);
+        $this->session->set_userdata('user_id', $user->getId());
 
         redirect('/escritorio/index');
     }

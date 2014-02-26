@@ -64,7 +64,7 @@ $autoload['libraries'] = array('layout','doctrine','session','form_validation');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','text','form');
+$autoload['helper'] = array('url','text','form','date');
 
 
 /*

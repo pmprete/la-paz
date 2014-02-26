@@ -26,7 +26,7 @@ class Contribuyente
     protected $nombre;
 
     /**
-     * @Column(type="string", length=13, nullable=false)
+     * @Column(type="string", length=13, nullable=false, unique=true)
      */
     protected $cuit;
 
@@ -59,6 +59,24 @@ class Contribuyente
      * @OneToMany(targetEntity="Deuda", mappedBy="contribuyente")
      */
     protected $deudas;
+
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)  */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -211,6 +229,22 @@ class Contribuyente
     public function getAltura()
     {
         return $this->altura;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 }

@@ -30,6 +30,24 @@ class PlanDePago
      */
 	private $deudas_restructuradas;
 
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+     /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)  */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
+
 
     //---------------------Comienzo de Funciones------------------------------------------
 
@@ -54,6 +72,22 @@ class PlanDePago
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 	 /**

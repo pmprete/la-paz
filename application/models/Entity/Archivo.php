@@ -29,6 +29,19 @@ class Archivo
      */
     protected $deuda;
 
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)  */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
+
 
     public function getId()
     {
