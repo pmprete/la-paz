@@ -26,17 +26,17 @@ class Deuda
     protected $detalle;
 
     /**
-     * @Column(type="decimal", precision=2, scale=1, nullable=false)
+     * @Column(type="decimal", precision=10, scale=2, nullable=false)
      */
     protected $importe;
 	
 	 /**
-     * @Column(type="decimal", precision=2, scale=1, nullable=false)
+     * @Column(type="decimal", precision=10, scale=2, nullable=false)
      */
     protected $multa;
 	
 	 /**
-     * @Column(type="decimal", precision=2, scale=1, nullable=false)
+     * @Column(type="decimal", precision=10, scale=2, nullable=false)
      */
     protected $recargo;
 	
@@ -84,10 +84,10 @@ class Deuda
     protected $archivos;
 
      /**
-     * @ManyToMany(targetEntity="Tasa", inversedBy="deudas")
-     * @JoinTable(name="tasas_deudas")
+     * @ManyToOne(targetEntity="Tasa")
+     * @JoinColumn(name="tasa_id", referencedColumnName="id")
      */
-    protected $tasas;
+    protected $tasa;
 	
 	/**
      * @ManyToOne(targetEntity="User")
@@ -101,15 +101,13 @@ class Deuda
      */
     protected $created_on;
 
+    //---------------------Comienzo de Funciones------------------------------------------
 
     /** @PrePersist */
     function onPrePersist()
     {
         $this->created_on = date('Y-m-d H:i:s');
     }
-
-
-    //---------------------Comienzo de Funciones------------------------------------------
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -162,18 +160,18 @@ class Deuda
      * @param	\Entity\Tasa	$tasa
      * @return	void
      */
-    public function addTasa(\Entity\Tasa $tasa)
+    public function setTasa(\Entity\Tasa $tasa)
     {
-        $this->tasas[] = $tasa;
+        $this->tasa = $tasa;
     }
 
    /** Get deudas
      *
-     * @return Doctrine\Common\Collections\Collection
+     * @return \Entity\Tasa
      */
-    public function getTasas()
+    public function getTasa()
     {
-        return $this->tasas;
+        return $this->tasa;
     }
     
 	/**
@@ -256,7 +254,7 @@ class Deuda
     }
 
 	/**
-     * @param \date $fecha
+     * @param \DateTime $fecha
      */
     public function setPeriodo($fecha)
     {
@@ -264,7 +262,7 @@ class Deuda
     }
 
     /**
-     * @return \date
+     * @return \DateTime
      */
     public function getPeriodo()
     {
@@ -272,7 +270,7 @@ class Deuda
     }
 
     /**
-     * @param \date $fecha
+     * @param \DateTime $fecha
      */
     public function setFechaVencimiento($fecha)
     {
@@ -280,7 +278,7 @@ class Deuda
     }
 
     /**
-     * @return \date
+     * @return \v
      */
     public function getFechaVencimiento()
     {

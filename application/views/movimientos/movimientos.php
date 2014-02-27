@@ -13,7 +13,7 @@
 
 <div class="row">
     <div class="col-lg-3">
-        <a href="<?php echo site_url("movimientos/deuda");?>">
+        <a href="<?php echo site_url("movimientos/nueva_deuda");?>">
             <div class="panel panel-danger">
                 <div class="panel-heading">
                     <div class="row">
@@ -39,7 +39,7 @@
         </a>
     </div>
     <div class="col-lg-3">
-        <a href="<?php echo site_url("movimientos/pago");?>">
+        <a href="<?php echo site_url("movimientos/nuevo_pago");?>">
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <div class="row">
@@ -65,7 +65,7 @@
         </a>
     </div>
     <div class="col-lg-3">
-        <a href="<?php echo site_url("movimientos/plan_de_pago");?>">
+        <a href="<?php echo site_url("movimientos/nuevo_plan_de_pago");?>">
             <div class="panel panel-warning">
                 <div class="panel-heading">
                     <div class="row">

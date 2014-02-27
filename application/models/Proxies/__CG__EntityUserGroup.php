@@ -42,6 +42,12 @@ class UserGroup extends \Entity\UserGroup implements \Doctrine\ORM\Proxy\Proxy
     }
 
     
+    public function onPrePersist()
+    {
+        $this->__load();
+        return parent::onPrePersist();
+    }
+
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
@@ -75,10 +81,22 @@ class UserGroup extends \Entity\UserGroup implements \Doctrine\ORM\Proxy\Proxy
         return parent::getUsers();
     }
 
+    public function setUser($user)
+    {
+        $this->__load();
+        return parent::setUser($user);
+    }
+
+    public function getUser()
+    {
+        $this->__load();
+        return parent::getUser();
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'name', 'users');
+        return array('__isInitialized__', 'id', 'name', 'created_on', 'users');
     }
 
     public function __clone()

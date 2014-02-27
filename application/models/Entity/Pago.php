@@ -23,12 +23,12 @@ class Pago
 	* @OneToOne(targetEntity="Deuda", inversedBy="pago")
 	* @JoinColumn(name="pago_id", referencedColumnName="id")
 	*/
-	private $deuda;
+    protected $deuda;
 	
 	/**
      * @Column(type="date", nullable=false)
      */
-    protected $fecha;
+    protected $fecha_pago;
 
     /**
      * @ManyToOne(targetEntity="User")
@@ -60,19 +60,19 @@ class Pago
     }
 	
 	/**
-     * @param date $fecha
+     * @param DateTime $fecha
      */
-    public function setFecha($fecha)
+    public function setFechaPago($fecha)
     {
-        $this->fecha = $fecha;
+        $this->fecha_pago = $fecha;
     }
 
     /**
-     * @return date
+     * @return DateTime
      */
-    public function getFecha()
+    public function getFechPago()
     {
-        return $this->fecha;
+        return $this->fecha_pago;
     }
 
     /**

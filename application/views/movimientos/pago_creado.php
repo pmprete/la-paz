@@ -1,9 +1,8 @@
 
-
 <div class="row">
     <div class="col-lg-12">
         <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-dashboard"></i> Deuda</li>
+            <li class="active"><i class="fa fa-dashboard"></i> Pago </li>
         </ol>
     </div>
 </div>
@@ -12,7 +11,7 @@
     <div class="col-lg-8  col-lg-offset-3">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Deuda Nro <?php echo $deuda->getId();?> creada con exito!</h3>
+                <h3 class="panel-title">Pago de la Deuda Nro <?php echo $deuda->getId();?> exitoso!</h3>
             </div>
             <div class="panel-body">
                 <?php

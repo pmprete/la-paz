@@ -6,12 +6,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <!-- Bootstrap core CSS -->
     <link href=<?php echo base_url('assets/css/bootstrap.min.css'); ?> rel="stylesheet">
-
     <!-- Custom Google Web Font -->
     <link href=<?php echo base_url('assets/font-awesome/css/font-awesome.min.css'); ?> rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap Multiselect -->
+    <!--<link href=<?php echo base_url('assets/css/bootstrap-multiselect.css'); ?> rel="stylesheet"> -->
 
     <!-- Add custom CSS here -->
     <link href=<?php echo base_url('assets/css/style.css'); ?> rel="stylesheet">
@@ -84,15 +86,20 @@
 <!-- /#wrapper -->
 
 <!-- JavaScript -->
-<script src=<?php echo base_url('assets/js/jquery-1.10.2.js'); ?>></script>
-<script src=<?php echo base_url('assets/js/bootstrap.js'); ?>></script>
+<script type="text/javascript" src=<?php echo base_url('assets/js/jquery-1.10.2.js'); ?>></script>
+<script type="text/javascript" src=<?php echo base_url('assets/js/bootstrap.js'); ?>></script>
+<!--<script type="text/javascript" src=<?php echo base_url('assets/js/bootstrap-multiselect.js'); ?>></script>-->
+
 
 <!-- Page Specific Plugins -->
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
-<!--<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>-->
-<!--<script src="js/morris/chart-data-morris.js"></script>-->
-<!--<script src="js/tablesorter/jquery.tablesorter.js"></script>-->
-<!--<script src="js/tablesorter/tables.js"></script>-->
+<!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
+<!--<script type="text/javascript" src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>-->
+<!--<script type="text/javascript" src="js/morris/chart-data-morris.js"></script>-->
+<!--<script type="text/javascript" src="js/tablesorter/jquery.tablesorter.js"></script>-->
+<!--<script type="text/javascript" src="js/tablesorter/tables.js"></script>-->
+
+<!-- My JavaScript -->
+<script src=<?php echo base_url('assets/js/script.js'); ?>></script>
 
 </body>
 </html>
