@@ -18,9 +18,55 @@ class Busquedas extends MY_Controller {
      */
     public function index()
     {
-        //$this->load->view('busqueda');
-        $data = null;
-        $this->layout->view('busquedas/busquedas', $data);
+        $this->layout->view('busquedas/busqueda');
+    }
+
+    public function exists_cuit($str)
+    {
+        $contribuyente = $this->enity_manager->getRepository('Entity\Contribuyente')->findOneBy(array('cuit' => $str));
+        if ($contribuyente == null)
+        {
+            $this->form_validation->set_message('exists_cuit', 'No existe un contributyente con este numero de %s ');
+            return FALSE;
+        }
+        else
+        {
+            return TRUE;
+        }
+    }
+
+    public function buscar()
+    {
+        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|exact_length[11]|callback_exists_cuit');
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->index();
+        }
+        else
+        {
+            $cuit =$_POST['cuit'];
+            $periodo_desde = $_POST['periodo_desde'];
+            $periodo_hasta = $_POST['periodo_hasta'];
+
+            $contribuyente = $this->enity_manager->getRepository('Entity\Contribuyente')->findOneBy(array('cuit' => $cuit));
+
+            $criteria = Criteria::create();
+            if(strlen($periodo_desde) > 0)
+            {
+                $criteria->andWhere(Criteria::expr()->lte("periodo", $periodo_desde));
+            }
+            if(strlen($periodo_desde) > 0)
+            {
+                $criteria->andWhere(Criteria::expr()->lte("periodo", $periodo_hasta));
+            }
+
+
+            $deudas = $contribuyente.getDeudas()->matching($criteria);
+
+            $data = $deudas;
+            $this->layout->view('busquedas/busqueda');
+            $this->layout->view('busquedas/busqueda_resultado',$data);
+        }
     }
 
 /* End of file welcome.php */

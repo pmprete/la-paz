@@ -44,7 +44,7 @@ class Movimientos
 
     public function crear_deuda()
     {
-        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|exact_length[13]|callback_exists_cuit');
+        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|exact_length[11]|callback_exists_cuit');
         $this->form_validation->set_rules('periodo', 'Periodo', 'trim|required');
         $this->form_validation->set_rules('fecha_vencimiento', 'Fecha de Vencimiento', 'trim|required');
         $this->form_validation->set_rules('importe', 'Importe', 'trim|required|decimal[10,2]');
@@ -101,7 +101,7 @@ class Movimientos
 
     public function buscar_deuda()
     {
-        $this->form_validation->set_rules('deuda_id', 'Nro. de Deuda', 'trim|required|callback_exists_deuda');
+        $this->form_validation->set_rules('deuda_id', 'Nro. de Deuda', 'trim|required|exact_length[11]|callback_exists_deuda');
 
         if ($this->form_validation->run() == FALSE)
         {

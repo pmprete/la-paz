@@ -45,9 +45,9 @@
                 <li><a href="<?php echo site_url("reportes/index");?>"><i class="fa fa-bar-chart-o"></i> Reportes</a></li>
                 <li><a href="<?php echo site_url("movimientos/index");?>"><i class="fa fa-edit"></i> Nuevos Movimientos</a></li>
                 <li><a href="<?php echo site_url("busquedas/index");?>"><i class="fa fa-desktop"></i> Busquedas</a></li>
-                <li><a href="#"><i class="fa fa-wrench"></i> Configuraciones</a></li>
+                <!-- <li><a href="#"><i class="fa fa-wrench"></i> Configuraciones</a></li>-->
                 <li><a href="<?php echo site_url("contribuyentes/index");?>"><i class="fa fa-file"></i> Nuevo Contribuyente</a></li>
-                <li class="dropdown">
+                <!--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>
                         Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -56,7 +56,7 @@
                         <li><a href="#">Third Item</a></li>
                         <li><a href="#">Last Item</a></li>
                     </ul>
-                </li>
+                </li>-->
             </ul>
 
             <ul class="nav navbar-nav navbar-right navbar-user">

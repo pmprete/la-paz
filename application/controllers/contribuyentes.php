@@ -35,7 +35,7 @@ class Contribuyentes extends MY_Controller {
     {
         $data = null;
         $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required');
-        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|exact_length[13]|callback_exists_cuit');
+        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|exact_length[11]|callback_exists_cuit');
         $this->form_validation->set_rules('calle', 'Calle', 'trim|required');
         $this->form_validation->set_rules('altura', 'Altura', 'trim|is_natural_no_zero');
         $this->form_validation->set_rules('piso', 'Piso', 'trim');

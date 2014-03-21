@@ -23,7 +23,7 @@
                         <div class="col-xs-6 text-right">
                             <p class="announcement-heading">456</p>
 
-                            <p class="announcement-text">New Mentions!</p>
+                            <p class="announcement-text">Deudores</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 <div class="panel-footer announcement-bottom">
                     <div class="row">
                         <div class="col-xs-6">
-                            View Mentions
+                            Ver Deudas
                         </div>
                         <div class="col-xs-6 text-right">
                             <i class="fa fa-arrow-circle-right"></i>
@@ -52,7 +52,7 @@
                         <div class="col-xs-6 text-right">
                             <p class="announcement-heading">12</p>
 
-                            <p class="announcement-text">To-Do Items</p>
+                            <p class="announcement-text">Planes de Pagos</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="panel-footer announcement-bottom">
                     <div class="row">
                         <div class="col-xs-6">
-                            Complete Tasks
+                            Ver Planes
                         </div>
                         <div class="col-xs-6 text-right">
                             <i class="fa fa-arrow-circle-right"></i>
@@ -81,7 +81,7 @@
                         <div class="col-xs-6 text-right">
                             <p class="announcement-heading">18</p>
 
-                            <p class="announcement-text">Crawl Errors</p>
+                            <p class="announcement-text">Deudas > $10.000</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="panel-footer announcement-bottom">
                     <div class="row">
                         <div class="col-xs-6">
-                            Fix Issues
+                            Ver Deudas
                         </div>
                         <div class="col-xs-6 text-right">
                             <i class="fa fa-arrow-circle-right"></i>
@@ -111,7 +111,7 @@
                         <div class="col-xs-6 text-right">
                             <p class="announcement-heading">56</p>
 
-                            <p class="announcement-text">New Orders!</p>
+                            <p class="announcement-text">Nuevos Pagos!</p>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
                 <div class="panel-footer announcement-bottom">
                     <div class="row">
                         <div class="col-xs-6">
-                            Complete Orders
+                            Ver Pagos
                         </div>
                         <div class="col-xs-6 text-right">
                             <i class="fa fa-arrow-circle-right"></i>
