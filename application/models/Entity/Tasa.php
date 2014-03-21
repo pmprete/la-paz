@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @Entity
  * @Table(name="tasa")
  */
-class User
+class Tasa
 {
 
 	/**
@@ -30,28 +30,44 @@ class User
 	 */
 	protected $descripcion;
 
-	 /**
-          * @ManyToMany(targetEntity="Deuda", mappedBy="tags")
-          */
-	protected $deudas;
-	
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
-	public function __construct() {
-	        $this->deudas = new ArrayCollection;
-	    }
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)
+     */
+    protected $created_on;
 
-	/**
-	 * Assign the user to a group
-	 *
-	 * @param	Entity\Deuda	$deuda
-	 * @return	void
-	 */
-	public function setDeuda(Deuda $deuda)
-	{
-		$this->deudas[] = $deuda;
-	}
 
-	/**
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+
+    /**
 	 * Encrypt the password before we store it
 	 *
 	 * @param	string	$nombre
@@ -84,14 +100,6 @@ class User
 		return $this->descripcion;
 	}
 
-	/**
-	 * Get group
-	 *
-	 * @return Entity\Deuda
-	 */
-	public function getDeudas()
-	{
-		return $this->deudas;
-	}
+
 
 }

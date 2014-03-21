@@ -29,23 +29,17 @@
                 
                     <div class="intro-message">
                     
-                        <h1>Si.Co.Paz</h1>
-                        <h2>Sistema de Cobranza de la Municipalidad de La Paz</h2>
+                        <h1>S.R.Paz</h1>
+                        <h2>Sistema de Rentas de la Municipalidad de La Paz</h2>
                         
                         <hr class="intro-divider"/>
 
-                            <?php
-                                $attributes = array('class' => 'form-signin', 'role' => 'form');
-                                echo form_open('login/ingresar', $attributes);
-                            ?>
-                                    <h3 class="form-signin-heading">Ingreso</h3>
-                                    <input id="username" name="username" type="username" class="form-control" placeholder="Usuario" required="" autofocus="">
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required="">
-                                    <label class="checkbox recordar-datos">
-                                    <input id="remember-me" name="remember-me" type="checkbox" value="remember-me"> Recordar mis datos
-                                    </label>
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-                            <?php echo form_close();?>
+                            <form class="form-signin" role="form" method="post" action="<?php echo site_url("login/ingresar")?>">
+                                <h3 class="form-signin-heading">Ingreso</h3>
+                                <input id="username" name="username" type="username" class="form-control" placeholder="Usuario" required="" autofocus="">
+                                <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required="">
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                            </form>
                                 
                     </div>
                 </div>

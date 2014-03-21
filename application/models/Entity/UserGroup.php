@@ -32,6 +32,20 @@ class UserGroup
     protected $users;
 
     /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)
+     */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
+
+
+    /**
      * Initialize any collection properties as ArrayCollections
      *
      * http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/association-mapping.html#initializing-collections
@@ -95,6 +109,22 @@ class UserGroup
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 }

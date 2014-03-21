@@ -8,9 +8,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User Model
  *
  * @Entity
- * @Table(name="cliente")
+ * @Table(name="contribuyente")
  */
-class Cliente
+class Contribuyente
 {
 
     /**
@@ -26,12 +26,17 @@ class Cliente
     protected $nombre;
 
     /**
-     * @Column(type="string", length=100, nullable=false)
+     * @Column(type="string", length=13, nullable=false, unique=true)
+     */
+    protected $cuit;
+
+    /**
+     * @Column(type="string", length=50, nullable=false)
      */
     protected $calle;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $altura;
 
@@ -41,19 +46,37 @@ class Cliente
     protected $piso;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $telefono_fijo;
 
     /**
-     * @Column(type="int", nullable=true)
+     * @Column(type="integer", nullable=true)
      */
     protected $telefono_movil;
 
     /**
-     * @OneToMany(targetEntity="Cuenta", mappedBy="cliente")
+     * @OneToMany(targetEntity="Deuda", mappedBy="contribuyente")
      */
-    protected $cuentas;
+    protected $deudas;
+
+    /**
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+
+    /**
+     * @var datetime $created_on
+     * @Column(type="datetime", nullable=true)  */
+    protected $created_on;
+
+
+    /** @PrePersist */
+    function onPrePersist()
+    {
+        $this->created_on = date('Y-m-d H:i:s');
+    }
 
     /**
      * Initialize any collection properties as ArrayCollections
@@ -63,11 +86,11 @@ class Cliente
      */
     public function __construct()
     {
-        $this->cuentas = new ArrayCollection;
+        $this->deudas = new ArrayCollection;
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -75,25 +98,41 @@ class Cliente
     }
 
     /**
-     * Add cuentas
+     * Add deuda
      *
-     * @param Entity\Cuenta $cuenta
-     * @return Cliente
+     * @param Entity\Deuda $deuda
+     * @return Contribuyente
      */
-    public function addCuenta(\Entity\Cuenta $cuenta)
+    public function addDeuda(\Entity\Deuda $deuda)
     {
-        $this->cuentas[] = $cuenta;
+        $this->deudas[] = $deuda;
         return $this;
     }
 
     /**
-     * Get cuentas
+     * Get deudas
      *
      * @return Doctrine\Common\Collections\Collection
      */
-    public function getCuentas()
+    public function getDeudas()
     {
-        return $this->cuentas;
+        return $this->deudas;
+    }
+
+    /**
+     * @param mixed $cuit
+     */
+    public function setCuit($cuit)
+    {
+        $this->cuit = $cuit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCuit()
+    {
+        return $this->cuit;
     }
 
     /**
@@ -190,6 +229,22 @@ class Cliente
     public function getAltura()
     {
         return $this->altura;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
 }

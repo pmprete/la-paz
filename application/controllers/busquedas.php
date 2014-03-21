@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Busqueda extends MY_Controller {
+class Busquedas extends MY_Controller {
     /**
      * Index Page for this controller.
      *
@@ -20,7 +20,7 @@ class Busqueda extends MY_Controller {
     {
         //$this->load->view('busqueda');
         $data = null;
-        $this->layout->view('busqueda', $data);
+        $this->layout->view('busquedas/busquedas', $data);
     }
 
 /* End of file welcome.php */
