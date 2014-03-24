@@ -62,6 +62,9 @@ class Movimientos
             $contribuyente = $this->enity_manager->getRepository('Entity\Contribuyente')->findOneBy(array('cuit' => $cuit));
             $deuda->setContribuyente($contribuyente);
 
+            $estado = $this->enity_manager->getRepository('Entity\EstadoDeuda')->findOneBy(array('nombre' => 'Activa'));
+            $deuda->setEstado($estado);
+
             $deuda->setImporte($_POST['importe']);
             $fecha_vencimiento = new DateTime($_POST['fecha_vencimiento']);
             $deuda->setFechaVencimiento($fecha_vencimiento);

@@ -7,8 +7,7 @@ namespace Entity;
  *
  * @Entity
  * @Table(name="user")
- * @author  Joseph Wynn <joseph@wildlyinaccurate.com>
- */
+  */
 class User
 {
 

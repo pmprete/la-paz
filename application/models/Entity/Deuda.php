@@ -96,8 +96,14 @@ class Deuda
     protected $user;
 
     /**
+     * @ManyToOne(targetEntity="EstadoDeuda")
+     * @JoinColumn(name="estado_deuda_id", referencedColumnName="id")
+     */
+    protected $estado;
+
+    /**
      * @var datetime $created_on
-     * @Column(type="datetime", nullable=true)
+     * @Column(type="datetime", nullable=false)
      */
     protected $created_on;
 
@@ -300,6 +306,14 @@ class Deuda
     {
         return $this->importe;
     }
+
+    /**
+     * @return decimal
+     */
+    public function getTotal()
+    {
+        return ($this->importe + $this->recargo);
+    }
 	
 	/**
      * @param decimal $multa
@@ -358,6 +372,22 @@ class Deuda
     }
 
     /**
+     * @return EstadoDeuda
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param EstadoDeuda $estado
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+    }
+
+    /**
      * @return User
      */
     public function getUser()
@@ -395,7 +425,6 @@ class Deuda
     {
         return $this->detalle;
     }
-
 
 
 }

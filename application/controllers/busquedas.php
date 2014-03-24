@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+use Doctrine\Common\Collections\Criteria;
+
 class Busquedas extends MY_Controller {
     /**
      * Index Page for this controller.
@@ -53,17 +55,16 @@ class Busquedas extends MY_Controller {
             $criteria = Criteria::create();
             if(strlen($periodo_desde) > 0)
             {
-                $criteria->andWhere(Criteria::expr()->lte("periodo", $periodo_desde));
+                $criteria->andWhere(Criteria::expr()->gte("periodo",  new DateTime($periodo_desde)));
             }
-            if(strlen($periodo_desde) > 0)
+            if(strlen($periodo_hasta) > 0)
             {
-                $criteria->andWhere(Criteria::expr()->lte("periodo", $periodo_hasta));
+                $criteria->andWhere(Criteria::expr()->lte("periodo",  new DateTime($periodo_hasta)));
             }
 
+            $deudas = $contribuyente->getDeudas()->matching($criteria);
+            $data['deudas'] = $deudas;
 
-            $deudas = $contribuyente.getDeudas()->matching($criteria);
-
-            $data = $deudas;
             $this->layout->view('busquedas/busqueda');
             $this->layout->view('busquedas/busqueda_resultado',$data);
         }

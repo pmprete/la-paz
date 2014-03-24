@@ -19,7 +19,7 @@
                 $data = array(
                     'deuda' => $deuda,
                 );
-                $this->load->view('movimientos/deuda', $data);
+                $this->load->view('movimientos/deuda_ver', $data);
                 ?>
             </div>
         </div>
