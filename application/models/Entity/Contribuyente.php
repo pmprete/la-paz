@@ -182,6 +182,14 @@ class Contribuyente
     {
         return $this->piso;
     }
+	
+	 /**
+     * @return mixed
+     */
+    public function getDireccion()
+    {
+        return $this->calle.' '.$this->altura.' '.$this->piso;
+    }
 
     /**
      * @param mixed $nombre
