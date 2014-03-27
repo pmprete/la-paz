@@ -180,6 +180,7 @@ class Movimientos
         $lista_tasas = $this->lista_tasas();
         $data = array(
             'tasas' => $lista_tasas,
+            'tasas_seleccionadas' => '',
         );
         $this->layout->view('movimientos/movimientos');
         $this->layout->view('movimientos/plan_de_pago_nuevo',$data);
@@ -190,22 +191,28 @@ class Movimientos
 		$this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|callback_exists_cuit');
         $this->form_validation->set_rules('tasas[]', 'Tasas', 'trim|required');
 
+        $cuit = $_POST['cuit'];
+        $tasas = $_POST['tasas'];
+
         if ($this->form_validation->run() == FALSE)
         {
-            $this->nuevo_plan_de_pago();
+            $lista_tasas = $this->lista_tasas();
+            $data = array(
+                'tasas' => $lista_tasas,
+                'tasas_seleccionadas'=> $tasas,
+            );
+            $this->layout->view('movimientos/movimientos');
+            $this->layout->view('movimientos/plan_de_pago_nuevo',$data);
         }
         else
         {
-            $cuit = $_POST['cuit'];
-            $tasas = $_POST['tasas'];
+			$contribuyente = $this->obtener_contribuyente($cuit);
+			$data = $this->obtener_deuda_contribuyente($contribuyente, $tasas);
 
-			$contribuyente = obtener_contribuyente($cuit);
-			$data = obtener_deuda_contribuyente($contribuyente, $tasas);
-           
+
 			$this->layout->view('movimientos/movimientos');
 			$this->layout->view('movimientos/plan_de_pago_nuevo',$data);
-			$this->layout->view('movimientos/lista_deudas',$data);
-			$this->layout->view('movimientos/cuotas', $data);
+			$this->layout->view('movimientos/plan_de_pago_lista_deudas',$data);
         }
     }
 	
@@ -217,13 +224,8 @@ class Movimientos
 	}
 	
 	private function obtener_deuda_contribuyente($contribuyente, $tasas){
-	
-		$lista_tasas = [];
-		foreach($tasas as $key=>$val)
-		{
-			$lista_tasas[] = $key;
-		}
-		$deudas = $this->enity_manager->getRepository('Entity\Deuda')->findBy(array('contribuyente'=>$contribuyente->getId(), 'tasa'=>$lista_tasas));
+
+		$deudas = $this->enity_manager->getRepository('Entity\Deuda')->findBy(array('contribuyente'=>$contribuyente->getId(), 'tasa'=>$tasas));
 
 		$total_tasa = 0;
 		$total_recargo = 0;
@@ -234,54 +236,70 @@ class Movimientos
 			$total_deuda += $deuda->getTotal(); 
 		}
 
+        $lista_tasas = $this->lista_tasas();
+
 		$data = array(
+            'cuit' => $contribuyente->getCuit(),
+            'tasas' => $lista_tasas,
+            'tasas_seleccionadas' => $tasas,
 			'deudas' => $deudas,
 			'total_tasa' => $total_tasa,
 			'total_recargo' => $total_recargo,
 			'total_deuda' => $total_deuda,
+            'cantidad_cuotas' => '',
+            'tasa_anual' => '',
+            'cuota_mensual' => '',
 		);
-		return $data
+		return $data;
 	}
-	
+
+
+    private function obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas){
+        // Se carga la libreria Calculadora de Prestamo
+        $this->load->library('Prestamo');
+
+
+        // Creamos el objeto préstamo y le decimos que queremos una exactitud de 10 dígitos después de la coma.
+        $prestamo   = new Prestamo(10);
+        // Configuramos el valor que pedimos de préstamo.
+        $prestamo->setCapital($monto);
+        //Configuro el valor de la tasa
+        $prestamo->setTasaInteres($tasa_anual, 12);
+
+        // Calculamos la tasa de interes que nos estan cobrando.
+        $cuota_mensual = $prestamo->calcCuota($cantidad_cuotas);
+        $cuota_mensual_redondeada = number_format($cuota_mensual, 2, ',', '.');
+        return $cuota_mensual_redondeada;
+    }
+
 	public function calcular_cuotas(){
 		$this->form_validation->set_rules('total_deuda', 'Total Deuda', 'trim|required|decimal[10,2]');
-		$this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required|decimal[10,2]');
+		$this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required');
 		$this->form_validation->set_rules('cantidad_cuotas', 'Cantidad de Cuotas', 'trim|required|is_natural_no_zero');
-		
+
+        $monto = $_POST['total_deuda'];
+        $tasa_anual = $_POST['tasa_anual'];
+        $cantidad_cuotas = $_POST['cantidad_cuotas'];
+
 		if ($this->form_validation->run() == FALSE)
         {
-            echo 'Error en los datos ingresados';
+            echo '\n ' . $monto;
+            echo '\n ' . $tasa_anual;
+            echo '\n ' . $cantidad_cuotas;
+            echo '\n ' . 'Error en los datos ingresados';
         }
         else
         {
-			$monto = $_POST['total_deuda'];
-            $tasa_anual = $_POST['tasa_anual'];
-			$cantidad_cuotas = $_POST['cantidad_cuotas'];
-			
-			$cuota_mensual = this->calcular_cuotas($monto, $tasa_anual, $cantidad_cuotas);
-			
-			 $data = array(
+			$cuota_mensual = $this->obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas);
+            $data = array(
+                'cantidad_cuotas' => $cantidad_cuotas,
+                'tasa_anual' => $tasa_anual,
                 'cuota_mensual' => $cuota_mensual,
             );
-			$this->load->view('movimientos/cuotas', $data);
+			$this->load->view('movimientos/plan_de_pago_cuotas', $data);
 		}
 	}
-	
-	private function obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas){
-		// Se carga la libreria Calculadora de Prestamo
-		$this->load->library('Prestamo');
-		
-		
-		// Creamos el objeto préstamo y le decimos que queremos una exactitud de 10 dígitos después de la coma.
-		$prestamo   = new Prestamo(10);
-		// Configuramos el valor que pedimos de préstamo.
-		$prestamo->setCapital(monto);
-		//Configuro el valor de la tasa
-		$prestamo->setTasaInteres($tasa_anual, 12);
-		
-		// Calculamos la tasa de interes que nos estan cobrando.
-		$cuota_mensual = $prestamo->calcCuota($cantidad_cuotas);
-	}
+
 	
 	 public function crear_plan_de_pago()
     {
@@ -290,22 +308,22 @@ class Movimientos
 		$this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required|decimal[10,2]');
 		$this->form_validation->set_rules('cantidad_cuotas', 'Cantidad de Cuotas', 'trim|required|is_natural_no_zero');
 
+        $cuit = $_POST['cuit'];
+        $tasas = $_POST['tasas'];
+        $tasa_anual = $_POST['tasa_anual'];
+        $cantidad_cuotas = $_POST['cantidad_cuotas'];
+
 		 if ($this->form_validation->run() == FALSE)
         {
             $this->buscar_deudas_para_plan_de_pago();
         }
         else
         {
-			$cuit = $_POST['cuit'];
-            $tasas = $_POST['tasas'];
-            $tasa_anual = $_POST['tasa_anual'];
-			$cantidad_cuotas = $_POST['cantidad_cuotas'];
-			
 			$contribuyente = obtener_contribuyente($cuit);
 			$data = obtener_deuda_contribuyente($contribuyente, $tasas);
-			$tota_deuda = $data['total_deuda']
+			$total_deuda = $data['total_deuda'];
 			//Calculo el valor de la cuota
-			$cuota_mensual = this->calcular_cuotas(tota_deuda, $tasa_anual, $cantidad_cuotas);
+			$cuota_mensual = obtener_cuotas($total_deuda, $tasa_anual, $cantidad_cuotas);
 			
 			// Se carga la libreria fpdf
 			$this->load->library('Pdf');
@@ -363,7 +381,7 @@ class Movimientos
 			$qb->add('select', 'd.periodo')
 			   ->add('from', 'Entity\Deuda d')
 			   ->add('where', 'd.contribuyente_id = :contribuyente_id')
-			   ->add('groupBy', 'd.periodo ASC');
+			   ->add('groupBy', 'd.periodo ASC')
 			   ->setParameter('contribuyente_id', $contribuyente->getId());
 			$periodos = $qb->getQuery()->getArrayResult();
 			

@@ -16,7 +16,7 @@
 
                 <h1>Plan de Facilidades de Pago ORD. 840/08</h1>
 
-                <form id="buscar-deuda-form" class="form-horizontal" role="form" method="post" action="<?php echo site_url("movimientos/plan_de_pago_buscar_deudas")?>">
+                <form id="buscar-deuda-form" class="form-horizontal" role="form" method="post" action="<?php echo site_url("movimientos/buscar_deudas_para_plan_de_pago")?>">
                     <div class="form-group">
                         <?php echo form_error('cuit'); ?>
                         <label class="col-sm-2 control-label">CUIT/CUIL</label>
@@ -31,7 +31,7 @@
                         <label for="input-group-cuit-cuil" class="col-sm-2 control-label">Tasas</label>
                         <div class="input-group col-sm-4" id="input-group-cuit-cuil">
                             <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                            <?php echo form_multiselect('tasas[]', $tasas,'','class="form-control multiselect" id="tasas[]"'); ?>
+                            <?php echo form_multiselect('tasas[]', $tasas,$tasas_seleccionadas,'class="form-control multiselect" id="tasas[]"'); ?>
                         </div>
                     </div>
 
