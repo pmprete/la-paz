@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <?php echo form_error('periodo'); ?>
-                        <label for="input-group-cuit-cuil" class="col-sm-2 control-label">Periodo</label>
+                        <label for="input-group-cuit-cuil" class="col-sm-2 control-label">Periodo (aaaa-mm)</label>
                         <div class="input-group col-sm-4" id="input-group-cuit-cuil">
                             <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
                             <input type="date" class="form-control" id="periodo" name="periodo" value="<?php echo set_value('periodo'); ?>">

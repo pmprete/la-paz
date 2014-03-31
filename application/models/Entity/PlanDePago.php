@@ -31,10 +31,17 @@ class PlanDePago
 	private $deudas_restructuradas;
 
     /**
+     * @OneToOne(targetEntity="Archivo", mappedBy="plan_de_plago")
+     */
+    protected $archivo;
+
+
+    /**
      * @ManyToOne(targetEntity="User")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
+
      /**
      * @var datetime $created_on
      * @Column(type="datetime", nullable=true)  */
@@ -129,7 +136,24 @@ class PlanDePago
     {
         return $this->deudas_restructuradas;
     }
-    
 
+    /**
+     * @param Archivo $archivo
+     */
+    public function setArchivo(\Entity\Archivo $archivo)
+    {
+        $this->archivo = $archivo;
+        return $this;
+    }
+
+    /**
+     * Get archivos
+     *
+     * @return Archivo
+     */
+    public function getArchivos()
+    {
+        return $this->archivo;
+    }
 
 }

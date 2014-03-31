@@ -38,6 +38,7 @@
                             <input type="date" class="form-control" id="fecha_pago" name="fecha_pago" value="<?php echo set_value('fecha_pago'); ?>">
                         </div>
                     </div>
+
                     <div id="mostrar_deuda">
                     </div>
 

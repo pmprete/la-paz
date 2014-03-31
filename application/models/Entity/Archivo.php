@@ -19,15 +19,10 @@ class Archivo
     protected $id;
 
     /**
-     * @Column(type="object",  nullable=false)
+     * @Column(type="string",  nullable=false)
      */
-    protected $objeto;
+    protected $file_name;
 
-    /**
-     * @ManyToOne(targetEntity="Deuda")
-     * @JoinColumn(name="deuda_id", referencedColumnName="id")
-     */
-    protected $deuda;
 
     /**
      * @var datetime $created_on
@@ -48,45 +43,21 @@ class Archivo
         return $this->id;
     }
 
-    /**
-     *
-     * @param	Entity\Deuda	$deuda
-     * @return	void
-     */
-    public function setDeuda(Entity\Deuda $deuda)
-    {
-        $this->deuda = $deuda;
-
-        // The association must be defined in both directions
-        if ( ! $deuda->getArchivos()->contains($this))
-        {
-            $deuda->addArchivo($this);
-        }
-    }
-    /**
-     * Get group
-     *
-     * @return Entity\Deuda
-     */
-    public function getDeuda()
-    {
-        return $this->deuda;
-    }
 
     /**
-     * @param mixed $objeto
+     * @param mixed $fileName
      */
-    public function setObjeto($objeto)
+    public function setFileName($file_name)
     {
-        $this->objeto = $objeto;
+        $this->file_name = $file_name;
     }
 
     /**
      * @return mixed
      */
-    public function getObjeto()
+    public function getFileName()
     {
-        return $this->objeto;
+        return $this->file_name;
     }
 
 

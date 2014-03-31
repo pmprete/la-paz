@@ -39,11 +39,6 @@ class User
 	 */
 	protected $group;
 
-    /**
-     * @ManyToOne(targetEntity="User")
-     * @JoinColumn(name="user_id", referencedColumnName="id")
-     */
-    protected $user;
 
     /**
      * @var datetime $created_on
@@ -145,20 +140,5 @@ class User
 		return $this->group;
 	}
 
-    /**
-     * @param User $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-
-    /**
-     * @return User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
 
 }

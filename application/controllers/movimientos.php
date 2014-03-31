@@ -186,44 +186,13 @@ class Movimientos
         $this->layout->view('movimientos/plan_de_pago_nuevo',$data);
     }
 
-    public function buscar_deudas_para_plan_de_pago()
-    {
-		$this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|callback_exists_cuit');
-        $this->form_validation->set_rules('tasas[]', 'Tasas', 'trim|required');
-
-        $cuit = $_POST['cuit'];
-        $tasas = $_POST['tasas'];
-
-        if ($this->form_validation->run() == FALSE)
-        {
-            $lista_tasas = $this->lista_tasas();
-            $data = array(
-                'tasas' => $lista_tasas,
-                'tasas_seleccionadas'=> $tasas,
-            );
-            $this->layout->view('movimientos/movimientos');
-            $this->layout->view('movimientos/plan_de_pago_nuevo',$data);
-        }
-        else
-        {
-			$contribuyente = $this->obtener_contribuyente($cuit);
-			$data = $this->obtener_deuda_contribuyente($contribuyente, $tasas);
-
-
-			$this->layout->view('movimientos/movimientos');
-			$this->layout->view('movimientos/plan_de_pago_nuevo',$data);
-			$this->layout->view('movimientos/plan_de_pago_lista_deudas',$data);
-        }
-    }
-	
-	
-	private function obtener_contribuyente($cuit){
+	protected  function obtener_contribuyente($cuit){
 	
 		$contribuyente = $this->enity_manager->getRepository('Entity\Contribuyente')->findOneBy(array('cuit' => $cuit));
 		return $contribuyente;
 	}
-	
-	private function obtener_deuda_contribuyente($contribuyente, $tasas){
+
+    protected function obtener_deuda_contribuyente($contribuyente, $tasas){
 
 		$deudas = $this->enity_manager->getRepository('Entity\Deuda')->findBy(array('contribuyente'=>$contribuyente->getId(), 'tasa'=>$tasas));
 
@@ -246,15 +215,12 @@ class Movimientos
 			'total_tasa' => $total_tasa,
 			'total_recargo' => $total_recargo,
 			'total_deuda' => $total_deuda,
-            'cantidad_cuotas' => '',
-            'tasa_anual' => '',
-            'cuota_mensual' => '',
 		);
 		return $data;
 	}
 
 
-    private function obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas){
+    protected  function obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas){
         // Se carga la libreria Calculadora de Prestamo
         $this->load->library('Prestamo');
 
@@ -272,41 +238,55 @@ class Movimientos
         return $cuota_mensual_redondeada;
     }
 
-	public function calcular_cuotas(){
-		$this->form_validation->set_rules('total_deuda', 'Total Deuda', 'trim|required|decimal[10,2]');
+	public function calcular_plan_de_pago(){
+        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|callback_exists_cuit');
+        $this->form_validation->set_rules('tasas[]', 'Tasas', 'trim|required');
 		$this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required');
 		$this->form_validation->set_rules('cantidad_cuotas', 'Cantidad de Cuotas', 'trim|required|is_natural_no_zero');
 
-        $monto = $_POST['total_deuda'];
+        $cuit = $_POST['cuit'];
+        $tasas = $_POST['tasas'];
         $tasa_anual = $_POST['tasa_anual'];
         $cantidad_cuotas = $_POST['cantidad_cuotas'];
 
 		if ($this->form_validation->run() == FALSE)
         {
-            echo '\n ' . $monto;
-            echo '\n ' . $tasa_anual;
-            echo '\n ' . $cantidad_cuotas;
-            echo '\n ' . 'Error en los datos ingresados';
+            $lista_tasas = $this->lista_tasas();
+            $data = array(
+                'tasas' => $lista_tasas,
+                'tasas_seleccionadas'=> $tasas,
+                'tasa_anual'=> $tasa_anual,
+                'cantidad_cuotas' => $cantidad_cuotas,
+
+            );
+            $this->layout->view('movimientos/movimientos');
+            $this->layout->view('movimientos/plan_de_pago_nuevo',$data);
         }
         else
         {
-			$cuota_mensual = $this->obtener_cuotas($monto, $tasa_anual, $cantidad_cuotas);
-            $data = array(
-                'cantidad_cuotas' => $cantidad_cuotas,
-                'tasa_anual' => $tasa_anual,
-                'cuota_mensual' => $cuota_mensual,
-            );
-			$this->load->view('movimientos/plan_de_pago_cuotas', $data);
+            $contribuyente = $this->obtener_contribuyente($cuit);
+
+            $data = $this->obtener_deuda_contribuyente($contribuyente, $tasas);
+            $total_deuda = $data['total_deuda'];
+            //Calculo el valor de la cuota
+			$cuota_mensual = $this->obtener_cuotas($total_deuda, $tasa_anual, $cantidad_cuotas);
+
+            $data['cantidad_cuotas'] = $cantidad_cuotas;
+            $data['tasa_anual'] = $tasa_anual;
+            $data['cuota_mensual'] = $cuota_mensual;
+
+            $this->layout->view('movimientos/movimientos');
+			$this->layout->view('movimientos/plan_de_pago_calculado', $data);
 		}
 	}
 
 	
 	 public function crear_plan_de_pago()
     {
-		$this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|callback_exists_cuit');
+        $this->form_validation->set_rules('cuit', 'CUIT/CUIL', 'trim|required|callback_exists_cuit');
         $this->form_validation->set_rules('tasas[]', 'Tasas', 'trim|required');
-		$this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required|decimal[10,2]');
-		$this->form_validation->set_rules('cantidad_cuotas', 'Cantidad de Cuotas', 'trim|required|is_natural_no_zero');
+        $this->form_validation->set_rules('tasa_anual', 'Tasa Anual', 'trim|required');
+        $this->form_validation->set_rules('cantidad_cuotas', 'Cantidad de Cuotas', 'trim|required|is_natural_no_zero');
 
         $cuit = $_POST['cuit'];
         $tasas = $_POST['tasas'];
@@ -319,15 +299,17 @@ class Movimientos
         }
         else
         {
-			$contribuyente = obtener_contribuyente($cuit);
-			$data = obtener_deuda_contribuyente($contribuyente, $tasas);
+			$contribuyente = $this->obtener_contribuyente($cuit);
+
+			$data = $this->obtener_deuda_contribuyente($contribuyente, $tasas);
 			$total_deuda = $data['total_deuda'];
 			//Calculo el valor de la cuota
-			$cuota_mensual = obtener_cuotas($total_deuda, $tasa_anual, $cantidad_cuotas);
-			
+			$cuota_mensual = $this->obtener_cuotas($total_deuda, $tasa_anual, $cantidad_cuotas);
+
+            ob_start();
 			// Se carga la libreria fpdf
 			$this->load->library('Pdf');
-					
+
 			// Creacion del PDF
 			/*
 			 * Se crea un objeto de la clase Pdf, recuerda que la clase Pdf
@@ -338,104 +320,181 @@ class Movimientos
 			$pdf->AddPage();
 			// Define el alias para el número de página que se imprimirá en el pie
 			$pdf->AliasNbPages();
-	 
+
 			/* Se define el titulo, márgenes izquierdo, derecho y
 			 * el color de relleno predeterminado
 			 */
-			$pdf->SetTitle("CERTIFICACION DE DEUDA MUNICIPAL");
+			$pdf->SetTitle(utf8_decode("CERTIFICACION DE DEUDA MUNICIPAL"));
 			$pdf->SetLeftMargin(15);
 			$pdf->SetRightMargin(15);
-			$pdf->SetFillColor(200,200,200);
+			/*
+			 * Coloreo el fondo
+			 */
+            $pdf->SetFillColor(255,255,255);
 	 
 			// Se define el formato de fuente: Arial, negritas, tamaño 9
-			$pdf->SetFont('Arial', 'B', 10);
+			$pdf->SetFont('Arial', 'B', 12);
 			/*
 			 * TITULOS DE COLUMNAS
 			 *
 			 * $pdf->Cell(Ancho, Alto,texto,borde,posición,alineación,relleno);
 			 */
-	 
-			$pdf->Cell(50,7,'CNV N° ... ... ... ... ...','B',0,'C','False');
+
+            $pdf->SetX(80);
+			$pdf->Cell(50,7,utf8_decode('CNV N° ... ... ... ... ...'),'B',0,'C','False');
 			$pdf->Ln();
-			$pdf->Cell(50,7,'SOLICITUD DE ACOGIMIENTO','B',0,'C','False');
+            $pdf->SetX(75);
+			$pdf->Cell(60,7,utf8_decode('SOLICITUD DE ACOGIMIENTO'),'B',0,'C','False');
 			$pdf->Ln();
-			$pdf->Cell(50,7,'PLAN DE FACILIDADES DE PAGO','B',0,'C','False');
-			$pdf->Ln();
-			$pdf->Cell(25,7,'ORD 840/08','B',0,'C','False');
+            $pdf->SetX(70);
+			$pdf->Cell(70,7,utf8_decode('PLAN DE FACILIDADES DE PAGO'),'B',0,'C','False');
+			$pdf->Ln(13);
+            $pdf->SetX(90);
+			$pdf->Cell(25,7,utf8_decode('ORD 840/08'),'B',0,'C','False');
 			$pdf->Ln();
 			
 			$dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
 			$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-			$fecha = "La Paz(E.Ríos)...".$dias[date('w')]."...".date('d')."...DE...".$meses[date('n')-1]."...DE...".date('Y') ;
-			
-			$pdf->Cell(80,7,$fecha,'LTR',0,'L','False');
+			$fecha = utf8_decode("La Paz (E.Ríos) ".$dias[date('w')]." ".date('d')." DE ".$meses[date('n')-1]." DE ".date('Y') );
+
+            $pdf->Ln();
+            $pdf->SetFont('Arial', 'B', 10);
+            $pdf->SetX(40);
+			$pdf->Cell(120,7,$fecha,'LTR',0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'TITULAR...'.$contribuyente->getNombre().'...','LR',0,'L','False');
+            $pdf->SetX(40);
+			$pdf->Cell(120,7,utf8_decode('TITULAR: '.$contribuyente->getNombre().' '),'LR',0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'PRESENTANTE.............................','LR',0,'L','False');
+            $pdf->SetX(40);
+			$pdf->Cell(120,7,utf8_decode('PRESENTANTE.............................'),'LR',0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'N° DOC...'.$contribuyente->getCuit().'...DOMICILIO...'.$contribuyente->getDireccion().'...','LRB',0,'L','False');
+            $numero_documento = number_format(substr($contribuyente->getCuit(),2,8),0,',','.');
+            $pdf->SetX(40);
+			$pdf->Cell(120,7,utf8_decode('N° DOC: '.$numero_documento.'     DOMICILIO: '.$contribuyente->getDireccion().' '),'LRB',0,'L','False');
 			$pdf->Ln();
-			
+
+
 			$qb =  $this->enity_manager->createQueryBuilder();
-			$qb->add('select', 'd.periodo')
-			   ->add('from', 'Entity\Deuda d')
-			   ->add('where', 'd.contribuyente_id = :contribuyente_id')
-			   ->add('groupBy', 'd.periodo ASC')
-			   ->setParameter('contribuyente_id', $contribuyente->getId());
-			$periodos = $qb->getQuery()->getArrayResult();
-			
-			$pdf->SetFont('Arial', '', 8);
-			$pdf->Cell(80,7,'TASA GENERAL INMOBILIARIA Y SERVICIOS CONTRIB. N°...'.$contribuyente->getId().'...PARTIDA N°.....',0,0,'L','False');
+			$qb->select('d.periodo')
+			   ->from('Entity\Deuda', 'd')
+               ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+			   ->where('d.contribuyente = :contribuyente_id')
+			   ->groupBy('d.periodo')
+               ->orderBy('d.periodo','ASC')
+			   ->setParameter('contribuyente_id', $contribuyente->getId())
+               ->setParameter('tasa_nombre', 'TGI');
+            $result = $qb->getQuery()->getArrayResult();
+
+            $periodos = array_map(function($value) { return $value['periodo']; }, $result);
+            //$periodos = array('dic'=>"24-Dciiembre",'ene'=>"3-Enero");
+            $periodos_con_formato = join(", ",array_values($periodos));
+
+            $pdf->Ln();
+			$pdf->SetFont('Arial', '', 9);
+			$pdf->Cell(80,7,utf8_decode('TASA GENERAL INMOBILIARIA Y SERVICIOS CONTRIB. N°: '.$contribuyente->getId().' PARTIDA N°:.......'),0,0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'PERIODOS ADEUDADOS...'.join(" ",$periodos).'...',0,0,'L','False');
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->Cell(80,7,'TOTAL DEUDA $...'.$total_deuda.'...F $.......................',0,0,'L','False');
+			$pdf->Cell(80,7,utf8_decode('PERIODOS ADEUDADOS: '.$periodos_con_formato.' '),0,0,'L','False');
+
+            $qb =  $this->enity_manager->createQueryBuilder();
+            $qb->select('SUM(d.importe + d.recargo)')
+                ->from('Entity\Deuda', 'd')
+                ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+                ->where('d.contribuyente = :contribuyente_id')
+                ->setParameter('contribuyente_id', $contribuyente->getId())
+                ->setParameter('tasa_nombre', 'TGI');
+            $total_deuda_inmobiliaria = $qb->getQuery()->getSingleScalarResult();
+
+            $pdf->Ln();
+			$pdf->Cell(80,7,utf8_decode('TOTAL DEUDA: $ '.$total_deuda_inmobiliaria.'     F $.......................'),0,0,'L','False');
 			//TODO: CAMBIAR TOTAL DEUDA AL TOTAL DE TASA INMOBILIARIA SOLAMENTE
 			$pdf->Ln();
-			$pdf->Line(50, 45, 210-50, 45); // 50mm from each edge
+            $pdf->Cell(0,7,'','B',0,'L','False');
+			$pdf->Ln(10);
+
+            $qb =  $this->enity_manager->createQueryBuilder();
+            $qb->select('d.periodo')
+                ->from('Entity\Deuda', 'd')
+                ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+                ->where('d.contribuyente = :contribuyente_id')
+                ->groupBy('d.periodo')
+                ->orderBy('d.periodo','ASC')
+                ->setParameter('contribuyente_id', $contribuyente->getId())
+                ->setParameter('tasa_nombre', 'COM');
+            $result = $qb->getQuery()->getArrayResult();
+
+            $periodos = array_map(function($value) { return $value['periodo']; }, $result);
+            //$periodos = array('dic'=>"24-Dciiembre",'ene'=>"3-Enero");
+            $periodos_con_formato = join(", ",array_values($periodos));
+			$pdf->Cell(80,7,utf8_decode('TASA HIGIENE Y SEGURIDAD CONTRIB. N°: '.$contribuyente->getId().' PARTIDA N°........'),0,0,'L','False');
 			$pdf->Ln();
-			
-			$pdf->Cell(80,7,'TASA HIGIENE Y SEGURIDAD CONTRIB. N°...'.$contribuyente->getId().'...PARTIDA N°.....',0,0,'L','False');
+			$pdf->Cell(80,7,utf8_decode('PERIODOS ADEUDADOS: '.$periodos_con_formato.' '),0,0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'PERIODOS ADEUDADOS...'.join(" ",$periodos).'...',0,0,'L','False');
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->Cell(80,7,'TOTAL DEUDA $...'.$total_deuda.'...F $.......................',0,0,'L','False');
+
+            $qb =  $this->enity_manager->createQueryBuilder();
+            $qb->select('SUM(d.importe + d.recargo)')
+                ->from('Entity\Deuda', 'd')
+                ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+                ->where('d.contribuyente = :contribuyente_id')
+                ->setParameter('contribuyente_id', $contribuyente->getId())
+                ->setParameter('tasa_nombre', 'COM');
+            $total_deuda_higiene = $qb->getQuery()->getSingleScalarResult();
+
+			$pdf->Cell(80,7,utf8_decode('TOTAL DEUDA: $ '.$total_deuda_higiene.'     F $.......................'),0,0,'L','False');
 			//TODO: CAMBIAR TOTAL DEUDA AL TOTAL DE TASA HIGIENE Y SEGURIDAD
 			$pdf->Ln();
-			$pdf->Line(50, 45, 210-50, 45); // 50mm from each edge
-			$pdf->Ln();
+            $pdf->Cell(0,7,'','B',0,'L','False');
+			$pdf->Ln(10);
 			
-			$pdf->Cell(80,7,'CEMENTERIO: NIC:......SEC:......FIL:......URN:......PAN:......',0,0,'L','False');
+			$pdf->Cell(80,7,utf8_decode('CEMENTERIO: NIC:......SEC:......FIL:......URN:......PAN:......'),0,0,'L','False');
 			$pdf->Ln();
-			$pdf->Cell(80,7,'PERIODOS ADEUDADOS...'.join(" ",$periodos).'...',0,0,'L','False');
-			$pdf->Ln();
-			$pdf->Ln();
-			$pdf->Cell(80,7,'TOTAL DEUDA $...'.$total_deuda.'...',0,0,'L','False');
+
+            $qb =  $this->enity_manager->createQueryBuilder();
+            $qb->select('d.periodo')
+                ->from('Entity\Deuda', 'd')
+                ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+                ->where('d.contribuyente = :contribuyente_id')
+                ->groupBy('d.periodo')
+                ->orderBy('d.periodo','ASC')
+                ->setParameter('contribuyente_id', $contribuyente->getId())
+                ->setParameter('tasa_nombre', 'CEM');
+            $result = $qb->getQuery()->getArrayResult();
+
+            $periodos = array_map(function($value) { return $value['periodo']; }, $result);
+            //$periodos = array('dic'=>"24-Dciiembre",'ene'=>"3-Enero");
+            $periodos_con_formato = join(", ",array_values($periodos));
+			$pdf->Cell(80,7,utf8_decode('PERIODOS ADEUDADOS: '.$periodos_con_formato.' '),0,0,'L','False');
+
+            $qb =  $this->enity_manager->createQueryBuilder();
+            $qb->select('SUM(d.importe + d.recargo)')
+                ->from('Entity\Deuda', 'd')
+                ->innerJoin('d.tasa', 't', 'WITH', 't.nombre = :tasa_nombre')
+                ->where('d.contribuyente = :contribuyente_id')
+                ->setParameter('contribuyente_id', $contribuyente->getId())
+                ->setParameter('tasa_nombre', 'COM');
+            $total_deuda_cementerio = $qb->getQuery()->getSingleScalarResult();
+
+			$pdf->Cell(80,7,utf8_decode('TOTAL DEUDA: $ '.$total_deuda_cementerio.' '),0,0,'L','False');
 			//TODO: CAMBIAR TOTAL DEUDA AL CEMENTERIO
 			$pdf->Ln();
-			$pdf->Line(50, 45, 210-50, 45); // 50mm from each edge
+            $pdf->Cell(0,7,'','B',0,'L','False');
 			$pdf->Ln();
-			$pdf->Ln();
-			
-			
-			$pdf->Cell(80,7,'FORMA DE PAGO:........','B',0,'L','False');
+            $pdf->SetFont('Arial', 'B', 8);
+            $pdf->Ln();
+			$pdf->Cell(23,7,utf8_decode('FORMA DE PAGO: ......................'),'B',0,'L','False');
 			$pdf->Ln();
 			$pdf->SetFont('Arial', 'B', 10);
-			$pdf->Cell(80,7,'CUOTAS DE: $...'.$couta_mensual.'...+ ACTUAL - VENCE 10 DE CADA MES.-','B',0,'L','False');
+			$pdf->Cell(120,7,utf8_decode('CUOTAS DE: $ '.$cuota_mensual.' + ACTUAL - VENCE 10 DE CADA MES.-'),0,0,'L','False');
 			$pdf->Ln();
-			$pdf->SetFont('Arial', 'I', 8);
-			$pdf->Cell(80,7,'EL QUE SUSCRIBE DECLARA CONOCER LA ORDENANZA EN TODO LO SU CONTENIDO.-',0,0,'L','False');
+			$pdf->SetFont('Arial', 'BI', 8);
+			$pdf->Cell(80,7,utf8_decode('EL QUE SUSCRIBE DECLARA CONOCER LA ORDENANZA EN TODO LO SU CONTENIDO.-'),0,0,'L','False');
 			$pdf->Ln();
 			$pdf->SetFont('Arial', '', 8);
-			$pdf->Cell(80,7,'TELEFONO N°...'.$contribuyente->getTelefonoFijo().'...',0,0,'L','False');
+			$pdf->Cell(80,7,utf8_decode('TELEFONO N°: '.$contribuyente->getTelefonoFijo().' '),0,0,'L','False');
 			$pdf->Ln();
 			$pdf->Ln();
-			$pdf->Cell(80,7,'FIRMA....................      ACLARACION.....................',0,0,'L','False');
+			$pdf->Cell(80,7,utf8_decode('FIRMA................................      ACLARACION.......................................'),0,0,'L','False');
 			$pdf->Ln();
-			
+
 			/*
 			 * Se manda el pdf al navegador
 			 *
@@ -444,16 +503,23 @@ class Movimientos
 			 * I = Muestra el pdf en el navegador
 			 * D = Envia el pdf para descarga
 			 *
+			 * Si tira un error agregar ob_end_clean();
 			 */
-			$pdf->Output("Ord840-80.pdf", 'I');
-		
-		
-			 $data = array(
-                'cuota_mensual' => $cuota_mensual
-            );	
-			
-			$this->layout->view('movimientos/movimientos');
-			$this->layout->view('movimientos/plan_de_pago_creado',$data);
-		}
+
+            $filename = "PlanDePago-".$contribuyente->getCuit()."-".date("Y-m-d H:i:s").".pdf";
+            $pdf->Output($filename, 'D');
+            /**Falta hacer todo esto
+            $archivo = new \Entity\Archivo();
+            $archivo->setFileName($filename);
+            $this->enity_manager->persist($archivo);
+
+            $plan_de_pago = new \Entity\PlanDePago();
+            $plan_de_pago->setArchivo($archivo);
+
+
+            $this->enity_manager->flush();
+            */
+        }
     }
 }
+

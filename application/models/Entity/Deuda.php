@@ -46,7 +46,7 @@ class Deuda
     protected $atraso;
 
     /**
-     * @Column(type="date", nullable=false)
+     * @Column(type="string",  length=7, nullable=false)
      */
     protected $periodo;
 	
@@ -77,11 +77,7 @@ class Deuda
      * @OneToOne(targetEntity="Pago", mappedBy="deuda")
      */
     protected $pago;
-	
-    /**
-     *@OneToMany(targetEntity="Archivo", mappedBy="deuda")
-     */
-    protected $archivos;
+
 
      /**
      * @ManyToOne(targetEntity="Tasa")
@@ -136,29 +132,6 @@ class Deuda
     {
         return $this->id;
     }
-
-    /**
-     * Add archivo
-     *
-     * @param \Entity\Archivo $archivo
-     * @return Archivo
-     */
-    public function addArchivo(\Entity\Archivo $archivo)
-    {
-        $this->archivos[] = $archivo;
-        return $this;
-    }
-
-    /**
-     * Get archivos
-     *
-     * @return Doctrine\Common\Collections\Collection
-     */
-    public function getArchivos()
-    {
-        return $this->archivos;
-    }
-
 
     /**
      * Assign the tasa to a deuda
@@ -260,15 +233,15 @@ class Deuda
     }
 
 	/**
-     * @param \DateTime $fecha
+     * @param string $periodo
      */
-    public function setPeriodo($fecha)
+    public function setPeriodo($periodo)
     {
-        $this->periodo = $fecha;
+        $this->periodo = $periodo;
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getPeriodo()
     {
